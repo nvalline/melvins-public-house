@@ -1,0 +1,43 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #242424;
+    width: calc(100% - 2em);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+
+    a {
+        color: #e3e3e3;
+        text-decoration: none;
+    }
+    
+    .logo {
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            padding: 0 0.3em;
+
+            a {
+                font-size: 0.9em;
+            }
+        }
+    }
+}
