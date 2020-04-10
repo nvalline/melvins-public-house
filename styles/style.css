@@ -1,8 +1,12 @@
-body {
+body, html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  height: 100%;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -11,7 +15,8 @@ header {
   top: 0;
   left: 0;
   padding: 1em;
-  background-color: #242424;
+  background: #242424;
+  border-bottom: 1px solid #e3e3e3;
   width: calc(100% - 2em);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,8 +35,7 @@ header a {
   text-decoration: none;
 }
 
-header .logo {
-  font-size: 1em;
+header a.logo {
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -41,13 +45,140 @@ header nav ul {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-}
-
-header nav ul li {
-  padding: 0 0.3em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header nav ul li a {
-  font-size: 0.9em;
+  padding: 1em;
+  font-size: 0.8em;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.container section {
+  padding: 3em;
+  color: #e3e3e3;
+}
+
+.container section h1, .container section h2, .container section .button {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.container section .contact-btn {
+  text-decoration: none;
+  font-weight: bold;
+  color: #242424;
+  padding-left: 1em;
+}
+
+.container section.hero {
+  padding-top: 10em;
+  background: url(../img/beertaps.jpg);
+  background-size: cover;
+}
+
+.container section.hero .primary {
+  border: 1px solid #e3e3e3;
+  color: #e3e3e3;
+  display: inline-block;
+  margin-top: 1.75em;
+  padding: 1.5em 1.5em 1.5em calc(3em + 20px);
+  background: url(../img/arrow-white.svg) no-repeat;
+  background-size: 8px;
+  background-position: 3em;
+  margin-left: -3em;
+}
+
+.container section.location {
+  background: #242424;
+}
+
+.container section.location h2, .container section.location h3 {
+  color: #efaf00;
+}
+
+.container section.location h2 {
+  font-size: 1.3rem;
+}
+
+.container section.location div a, .container section.location p {
+  color: #d5c599;
+}
+
+.container section.location div a {
+  background: url(../img/arrow-gold.svg) no-repeat;
+  background-size: 8px;
+  background-position: 0 5px;
+  padding-left: 1em;
+}
+
+.container section.subscribe {
+  color: #242424;
+}
+
+.container input {
+  border: 1px solid #242424;
+  color: #242424b5;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  padding: 1em;
+  width: calc(100% - 2em);
+}
+
+.container button {
+  background-color: #242424;
+  color: #e3e3e3;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+        grid-template-areas: 'hero location' 'hero subscribe';
+    -ms-grid-columns: 70% auto;
+        grid-template-columns: 70% auto;
+    -ms-grid-rows: 60% auto;
+        grid-template-rows: 60% auto;
+  }
+  .hero {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: hero;
+  }
+  section.location {
+    position: relative;
+    top: 2em;
+  }
+  section.location .phone a {
+    pointer-events: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

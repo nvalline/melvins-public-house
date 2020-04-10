@@ -1,8 +1,14 @@
-body {
+body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    height: 100%;
     font-family: 'Nunito', sans-serif;
+
+    // *** display: none;
 }
 
 header {
@@ -10,7 +16,8 @@ header {
     top: 0;
     left: 0;
     padding: 1em;
-    background-color: #242424;
+    background: #242424;
+    border-bottom: 1px solid #e3e3e3;
     width: calc(100% - 2em);
     display: flex;
     justify-content: space-between;
@@ -22,8 +29,7 @@ header {
         text-decoration: none;
     }
     
-    .logo {
-        font-size: 1em;
+    a.logo {
         font-weight: bold;
         text-transform: uppercase;
     }
@@ -31,13 +37,132 @@ header {
     nav ul {
         display: flex;
         list-style: none;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        padding: 0;
 
-        li {
-            padding: 0 0.3em;
+        li a {
+            padding: 1em;
+            font-size: 0.8em;
+        }
+    }    
+}
 
-            a {
-                font-size: 0.9em;
-            }
+.container {
+    display: grid;
+    grid-template-columns: auto;
+
+    section {
+        padding: 3em;
+        color: #e3e3e3;
+
+        h1, h2, .button {
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .contact-btn {
+            text-decoration: none;
+            font-weight: bold;
+            color: #242424;
+            padding-left: 1em;
+        }
+    }
+
+    section.hero {
+        padding-top: 10em;
+        background: url(../img/beertaps.jpg);
+        background-size: cover;
+        
+        .primary {
+            border: 1px solid #e3e3e3;
+            color: #e3e3e3;
+            display: inline-block;
+            margin-top: 1.75em;
+            padding: 1.5em 1.5em 1.5em calc(3em + 20px);
+            background: url(../img/arrow-white.svg) no-repeat;
+            background-size: 8px;
+            background-position: 3em;
+            margin-left: -3em;
+        }
+    }
+
+    section.location {
+        background: #242424;
+
+        h2, h3 {
+            color: #efaf00;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+        }
+        
+        div a, p {
+            color: #d5c599;
+        }
+
+        div a {
+            background: url(../img/arrow-gold.svg) no-repeat;
+            background-size: 8px;
+            background-position: 0 5px;
+            padding-left: 1em;
+        }
+    }
+
+    section.subscribe {
+        color: #242424;
+    }
+
+    input {
+        border: 1px solid #242424;
+        color: #242424b5;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+        padding: 1em;
+        width: calc(100% - 2em);
+    }
+
+    button {
+        background-color: #242424;
+        color: #e3e3e3;
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+// Media Queries
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+        grid-template-areas: 
+            'hero location'
+            'hero subscribe';
+        grid-template-columns: 70% auto;
+        grid-template-rows: 60% auto;
+    }
+
+    .hero {
+        grid-area: hero;
+    }
+
+    section.location {
+        position: relative;
+        top: 2em;
+        
+        .phone a {
+            pointer-events: none;
         }
     }
 }
