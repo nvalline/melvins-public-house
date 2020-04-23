@@ -7,7 +7,7 @@ body, html {
 body {
     height: 100%;
     font-family: 'Nunito', sans-serif;
-
+    
     // *** display: none;
 }
 
@@ -23,7 +23,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 20;
-
+    
     a {
         color: #e3e3e3;
         text-decoration: none;
@@ -33,7 +33,7 @@ header {
         font-weight: bold;
         text-transform: uppercase;
     }
-
+    
     nav ul {
         display: flex;
         list-style: none;
@@ -41,7 +41,7 @@ header {
         width: 100%;
         margin: 0;
         padding: 0;
-
+        
         li a {
             padding: 1em;
             font-size: 0.8em;
@@ -52,16 +52,16 @@ header {
 .container {
     display: grid;
     grid-template-columns: auto;
-
+    
     section {
         padding: 3em;
         color: #e3e3e3;
-
+        
         h1, h2, .button {
             text-transform: uppercase;
             margin: 0;
         }
-
+        
         .contact-btn {
             text-decoration: none;
             font-weight: bold;
@@ -69,10 +69,10 @@ header {
             padding-left: 1em;
         }
     }
-
+    
     section.hero {
         padding-top: 10em;
-        background: url(../img/beertaps.jpg);
+        background: url(../img/owners.jpg);
         background-size: cover;
         
         .primary {
@@ -87,10 +87,11 @@ header {
             margin-left: -3em;
         }
     }
-
+    
     section.location {
         background: #242424;
-
+        text-align: center;
+        
         h2, h3 {
             color: #efaf00;
         }
@@ -102,7 +103,7 @@ header {
         div a, p {
             color: #d5c599;
         }
-
+        
         div a {
             background: url(../img/arrow-gold.svg) no-repeat;
             background-size: 8px;
@@ -110,11 +111,12 @@ header {
             padding-left: 1em;
         }
     }
-
+    
     section.subscribe {
         color: #242424;
+        text-align: center;
     }
-
+    
     input {
         border: 1px solid #242424;
         color: #242424b5;
@@ -123,7 +125,7 @@ header {
         padding: 1em;
         width: calc(100% - 2em);
     }
-
+    
     button {
         background-color: #242424;
         color: #e3e3e3;
@@ -137,32 +139,4 @@ header {
     }
 }
 
-// Media Queries
-@media only screen and (min-width: 768px) {
-    html {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .container {
-        grid-template-areas: 
-            'hero location'
-            'hero subscribe';
-        grid-template-columns: 70% auto;
-        grid-template-rows: 60% auto;
-    }
-
-    .hero {
-        grid-area: hero;
-    }
-
-    section.location {
-        position: relative;
-        top: 2em;
-        
-        .phone a {
-            pointer-events: none;
-        }
-    }
-}
+@import './media';

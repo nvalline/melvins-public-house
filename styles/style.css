@@ -83,7 +83,7 @@ header nav ul li a {
 
 .container section.hero {
   padding-top: 10em;
-  background: url(../img/beertaps.jpg);
+  background: url(../img/owners.jpg);
   background-size: cover;
 }
 
@@ -101,6 +101,7 @@ header nav ul li a {
 
 .container section.location {
   background: #242424;
+  text-align: center;
 }
 
 .container section.location h2, .container section.location h3 {
@@ -124,6 +125,7 @@ header nav ul li a {
 
 .container section.subscribe {
   color: #242424;
+  text-align: center;
 }
 
 .container input {
