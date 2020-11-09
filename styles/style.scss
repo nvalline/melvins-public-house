@@ -11,49 +11,59 @@ body {
     // *** display: none;
 }
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1em;
-    background: #242424;
-    border-bottom: 1px solid #e3e3e3;
-    width: calc(100% - 2em);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 20;
-    
-    a {
-        color: #e3e3e3;
-        text-decoration: none;
-    }
-    
-    a.logo {
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    
-    nav ul {
-        display: flex;
-        list-style: none;
-        justify-content: space-around;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        
-        li a {
-            padding: 1em;
-            font-size: 0.8em;
-        }
-    }    
-}
 
 .container {
     display: grid;
+    grid-template-areas: 
+    'head'
+    'hero'
+    'sub-hero'
+    'location'
+    'subscribe';
     grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+                                
+    .header {
+        grid-area: head;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        padding: 1em;
+        background: #242424;
+        border-bottom: 1px solid #e3e3e3;
+        width: calc(100% - 2em);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // z-index: 20;
+                                    
+        a {
+            color: #e3e3e3;
+            text-decoration: none;
+        }
+                                    
+         a.logo {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+                                    
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+                                        
+           li a {
+                padding: 1em;
+                font-size: 0.8em;
+            }
+        }    
+    }
     
     section {
+        background-color: #e3e3e3;
         padding: 3em;
         color: #e3e3e3;
         
@@ -71,17 +81,27 @@ header {
     }
     
     section.hero {
-        padding-top: 10em;
-        background: url(../img/owners.jpg);
+        grid-area: hero;
+        padding: 38.5%;
+        background: url(../img/beertaps2.jpg);
         background-size: cover;
+    }
+    
+    section.sub-hero {
+        grid-area: sub-hero;
+        text-align: center;
+        
+        h1, p {
+            color: #242424;
+        }
         
         .primary {
-            border: 1px solid #e3e3e3;
-            color: #e3e3e3;
+            border: 1px solid #242424;
+            color: #242424;
             display: inline-block;
             margin-top: 1.75em;
             padding: 1.5em 1.5em 1.5em calc(3em + 20px);
-            background: url(../img/arrow-white.svg) no-repeat;
+            background: url(../img/arrow-black.svg) no-repeat;
             background-size: 8px;
             background-position: 3em;
             margin-left: -3em;
@@ -89,6 +109,7 @@ header {
     }
     
     section.location {
+        grid-area: location;
         background: #242424;
         text-align: center;
         
@@ -113,6 +134,7 @@ header {
     }
     
     section.subscribe {
+        grid-area: subscribe;
         color: #242424;
         text-align: center;
     }

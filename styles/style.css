@@ -10,10 +10,20 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
+.container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'head' 'hero' 'sub-hero' 'location' 'subscribe';
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+}
+
+.container .header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: head;
   padding: 1em;
   background: #242424;
   border-bottom: 1px solid #e3e3e3;
@@ -27,20 +37,19 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 20;
 }
 
-header a {
+.container .header a {
   color: #e3e3e3;
   text-decoration: none;
 }
 
-header a.logo {
+.container .header a.logo {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-header nav ul {
+.container .header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,19 +61,13 @@ header nav ul {
   padding: 0;
 }
 
-header nav ul li a {
+.container .header nav ul li a {
   padding: 1em;
   font-size: 0.8em;
 }
 
-.container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-}
-
 .container section {
+  background-color: #e3e3e3;
   padding: 3em;
   color: #e3e3e3;
 }
@@ -82,24 +85,41 @@ header nav ul li a {
 }
 
 .container section.hero {
-  padding-top: 10em;
-  background: url(../img/owners.jpg);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hero;
+  padding: 38.5%;
+  background: url(../img/beertaps2.jpg);
   background-size: cover;
 }
 
-.container section.hero .primary {
-  border: 1px solid #e3e3e3;
-  color: #e3e3e3;
+.container section.sub-hero {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: sub-hero;
+  text-align: center;
+}
+
+.container section.sub-hero h1, .container section.sub-hero p {
+  color: #242424;
+}
+
+.container section.sub-hero .primary {
+  border: 1px solid #242424;
+  color: #242424;
   display: inline-block;
   margin-top: 1.75em;
   padding: 1.5em 1.5em 1.5em calc(3em + 20px);
-  background: url(../img/arrow-white.svg) no-repeat;
+  background: url(../img/arrow-black.svg) no-repeat;
   background-size: 8px;
   background-position: 3em;
   margin-left: -3em;
 }
 
 .container section.location {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: location;
   background: #242424;
   text-align: center;
 }
@@ -124,6 +144,9 @@ header nav ul li a {
 }
 
 .container section.subscribe {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: subscribe;
   color: #242424;
   text-align: center;
 }
@@ -157,29 +180,25 @@ header nav ul li a {
 
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 20px;
+    font-size: 1.2em;
+  }
+  html .hero {
+    padding: 0;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .container {
-        grid-template-areas: 'hero location' 'hero subscribe';
+        grid-template-areas: 'head head'  'hero location' 'sub-hero subscribe';
     -ms-grid-columns: 70% auto;
         grid-template-columns: 70% auto;
-    -ms-grid-rows: 60% auto;
-        grid-template-rows: 60% auto;
+    -ms-grid-rows: 10vh 60% auto;
+        grid-template-rows: 10vh 60% auto;
   }
-  .hero {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 1;
-    grid-area: hero;
+  .container section.hero {
+    padding: 0;
   }
-  section.location {
-    position: relative;
-    top: 2em;
-  }
-  section.location .phone a {
+  .phone a {
     pointer-events: none;
   }
 }
