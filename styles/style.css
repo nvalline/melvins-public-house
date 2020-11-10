@@ -313,6 +313,9 @@ body {
     -ms-grid-rows: 10vh 60% auto;
         grid-template-rows: 10vh 60% auto;
   }
+  .container .header {
+    font-size: 1.4rem;
+  }
   .container section.hero {
     padding: 0;
   }

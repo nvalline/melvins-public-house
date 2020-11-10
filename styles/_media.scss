@@ -56,6 +56,10 @@
         grid-template-columns: 70% auto;
         grid-template-rows: 10vh 60% auto;
 
+        .header {
+            font-size: 1.4rem;
+        }
+
         section.hero {
             padding: 0;
         }
