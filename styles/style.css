@@ -89,9 +89,6 @@ body {
   -ms-grid-column: 1;
   grid-area: hero;
   padding: 38.5%;
-  background: url(../img/beertaps2.jpg);
-  background-size: cover;
-  position: relative;
 }
 
 .container section.hero .hide {
@@ -144,6 +141,12 @@ body {
 
 .container section.hero .primary:hover {
   background-color: #aeadad;
+}
+
+.container section.hero-img {
+  background: url(../img/beertaps2.jpg);
+  background-size: cover;
+  position: relative;
 }
 
 .container section.sub-hero {
@@ -235,6 +238,9 @@ body {
 }
 
 .container section.footer {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: footer;
   background-color: #242424;
   border: none;
   display: -webkit-box;
@@ -269,6 +275,12 @@ body {
 
 .container section.footer p {
   font-size: 0.75em;
+}
+
+.container section.about-img {
+  background: url(../img/owners.jpg);
+  background-size: cover;
+  position: relative;
 }
 
 @media only screen and (min-width: 768px) {

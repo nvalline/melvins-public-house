@@ -83,14 +83,11 @@ body {
     section.hero {
         grid-area: hero;
         padding: 38.5%;
-        background: url(../img/beertaps2.jpg);
-        background-size: cover;
-        position: relative;
-
+        
         .hide {
             visibility: hidden;
         }
-
+        
         .mobile-nav {
             background-color: #242424;
             position: absolute;
@@ -103,10 +100,10 @@ body {
                 align-items: center;
                 justify-content: space-evenly;
                 padding: 0;
-
+                
                 li {
                     list-style: none;
-
+                    
                     a {
                         color: #e3e3e3;
                         text-decoration: none;
@@ -128,10 +125,17 @@ body {
             left: 0;
             top: 70%;
         }
-
+        
         .primary:hover {
             background-color: #aeadad;
         }
+    }
+    
+    section.hero-img {
+        background: url(../img/beertaps2.jpg);
+        background-size: cover;
+        position: relative;
+
     }
     
     section.sub-hero {
@@ -202,6 +206,7 @@ body {
     }
 
     section.footer {
+        grid-area: footer;
         background-color: #242424;
         border: none;
         display: flex;
@@ -230,4 +235,5 @@ body {
     }
 }
 
+@import './about';
 @import './media';
