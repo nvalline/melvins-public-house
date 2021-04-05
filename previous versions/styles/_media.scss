@@ -1,0 +1,71 @@
+// Media Queries
+
+// ** Min Width 768px
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 1.2em;
+    }
+
+    
+    .container {
+        .header {
+            padding: 1em 3em;
+            width: calc(100% - 6em);
+
+            nav i.mobile {
+                display: none;
+            }
+    
+            nav ul.desktop {
+                display: flex;
+                list-style: none;
+                justify-content: space-around;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                                            
+               li a {
+                    padding: 1em 1.5em;
+                    font-size: 0.8em;
+                }
+            }
+        }
+
+        section.hero {            
+            .mobile-nav {
+                display: none;
+            }
+            
+            .primary {
+                top: 80%;
+            }
+        }
+    }
+}
+
+// ** Min Width 992px
+
+@media only screen and (min-width: 992px) {
+    .container {
+        grid-template-areas:
+            'head head' 
+            'hero location'
+            'sub-hero subscribe'
+            'footer subscribe';
+        grid-template-columns: 70% auto;
+        grid-template-rows: 10vh 60% auto;
+
+        .header {
+            font-size: 1.4rem;
+        }
+
+        section.hero {
+            padding: 0;
+        }
+    }
+        
+    .phone a {
+        pointer-events: none;
+    }
+}
