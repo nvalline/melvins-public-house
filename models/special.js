@@ -11,8 +11,8 @@ const specialSchema = new Schema({
 		required: true
 	},
 	specialDate: {
-		type: Date,
-		required: true
+		type: Date
+		//* required: true
 	}
 });
 

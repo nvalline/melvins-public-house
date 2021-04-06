@@ -8,7 +8,7 @@ module.exports = {
 	},
 	create: function (req, res) {
 		db.Special.create(req.body)
-			.then(console.log('Event Created'))
+			.then(res.sendStatus(200))
 			.catch((err) => res.status(422).json(err));
 	},
 	update: function (req, res) {
