@@ -10,7 +10,7 @@ router
 // matches with '/api/specials/:id'
 router
 	.route('/:id')
-	.get(specialsController.findById)
+	// .get(specialsController.findById)
 	.put(specialsController.update)
 	.delete(specialsController.remove);
 

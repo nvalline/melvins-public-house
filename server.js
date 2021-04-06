@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 // require environmental variables
 require('dotenv').config();
 
+// route requirements
+const api = require('./routes/api');
+
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -18,6 +21,12 @@ mongoose
 	})
 	.then(console.log('MongoDB connected'))
 	.catch((err) => console.log('MDB Connection Error:', err));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Routes
+app.use('/api', api);
 
 // Connect Express Server
 app.listen(PORT, () => {
