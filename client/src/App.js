@@ -1,11 +1,17 @@
 // dependencies
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// components
+import Navbar from './components/Navbar';
 
 function App() {
 	return (
-		<div>
-			<p>App</p>
-		</div>
+		<Router>
+			<main>
+				<Navbar />
+				<p className='main-app'>App</p>
+			</main>
+		</Router>
 	);
 }
 

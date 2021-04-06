@@ -1,0 +1,32 @@
+// Variables
+
+// colors
+$primary_black: #242424;
+$primary_yellow: #efaf00;
+$primary_white: #eeeeee;
+
+// fonts
+$primary_font: 'Bentham', serif;
+$secondary_font: 'Montserrat', sans-serif;
+
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	a {
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@import './styles/nav';

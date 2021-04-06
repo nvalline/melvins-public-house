@@ -1,0 +1,62 @@
+// Nav Specific Variable
+$transition: all 0.3s linear;
+
+nav {
+	background: $primary_black;
+
+	.mobile-nav {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding: 2rem;
+
+		.logo {
+			color: $primary_white;
+			font-family: $primary_font;
+			font-size: 2.2rem;
+			text-transform: uppercase;
+
+			p {
+				margin: 0;
+
+				span {
+					display: none;
+				}
+			}
+		}
+
+		.nav-toggle {
+			background: transparent;
+			border-color: transparent;
+			color: $primary_white;
+			cursor: pointer;
+			font-size: 2.2rem;
+			transition: $transition;
+		}
+
+		.nav-toggle:focus {
+			outline: none;
+		}
+	}
+
+	.links-container {
+		height: 0;
+		overflow: hidden;
+		transition: $transition;
+
+		.links {
+			padding: 1rem 3rem;
+
+			li {
+				margin-bottom: 0.75rem;
+				text-align: right;
+			}
+
+			.link {
+				color: $primary_white;
+				font-size: 1.6rem;
+				transition: $transition;
+			}
+		}
+	}
+}
