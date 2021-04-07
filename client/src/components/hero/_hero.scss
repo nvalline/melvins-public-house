@@ -1,0 +1,20 @@
+// hero image variable
+$hero-img: '../../img/beertaps2.jpg';
+
+.hero-container {
+	background-image: url($hero-img);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 283px;
+	// position: relative;
+
+	// .up-tab-black {
+	// 	position: relative;
+	// 	top: 100%;
+	// 	left: 50%;
+	// 	transform: translate(-50%);
+	// 	background-color: $primary_black;
+	// 	height: 40px;
+	// 	width: 200px;
+	// }
+}
