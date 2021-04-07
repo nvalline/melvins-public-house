@@ -9,7 +9,7 @@ nav {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
-		padding: 2rem;
+		padding: 1.5rem 2rem;
 
 		.logo {
 			color: $primary_white;
@@ -41,7 +41,7 @@ nav {
 
 	.links-container {
 		position: absolute;
-		top: 74px;
+		top: 64px;
 		right: -100%;
 		background-color: $primary_black;
 		height: 100px;
