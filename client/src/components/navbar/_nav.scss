@@ -1,8 +1,9 @@
 // Nav Specific Variable
-$transition: all 0.3s linear;
+$nav_transition: all 0.5s ease;
 
 nav {
 	background: $primary_black;
+	position: relative;
 
 	.mobile-nav {
 		align-items: center;
@@ -31,7 +32,6 @@ nav {
 			color: $primary_white;
 			cursor: pointer;
 			font-size: 2.2rem;
-			transition: $transition;
 		}
 
 		.nav-toggle:focus {
@@ -40,9 +40,14 @@ nav {
 	}
 
 	.links-container {
-		height: 0;
-		overflow: hidden;
-		transition: $transition;
+		position: absolute;
+		top: 74px;
+		right: -100%;
+		background-color: $primary_black;
+		height: 100px;
+		width: 100%;
+		opacity: 0;
+		transition: $nav_transition;
 
 		.links {
 			padding: 1rem 3rem;
@@ -55,8 +60,15 @@ nav {
 			.link {
 				color: $primary_white;
 				font-size: 1.6rem;
-				transition: $transition;
+				transition: $nav_transition;
 			}
 		}
+	}
+
+	.links-container.active {
+		right: 0;
+		opacity: 1;
+		transition: $nav_transition;
+		z-index: 1;
 	}
 }
