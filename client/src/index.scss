@@ -4,6 +4,7 @@
 $primary_black: #242424;
 $primary_yellow: #efaf00;
 $primary_white: #eeeeee;
+$secondary_black: #454545;
 
 // fonts
 $primary_font: 'Bentham', serif;
@@ -31,3 +32,4 @@ body {
 
 @import './components/navbar/nav';
 @import './components/hero/hero';
+@import './components/subhero/subhero';

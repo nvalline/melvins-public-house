@@ -47,8 +47,8 @@ nav {
 		height: 100px;
 		width: 0;
 		opacity: 1;
-		overflow: hidden;
 		transition: $nav_transition;
+		overflow: hidden;
 
 		.links {
 			padding: 1rem 3rem;

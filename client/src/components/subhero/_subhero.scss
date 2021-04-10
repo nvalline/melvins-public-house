@@ -1,0 +1,35 @@
+.subhero-container {
+	background-color: $primary_black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 2rem 2rem 2rem;
+
+	.subhero-title {
+		color: $primary_white;
+		font-family: $primary_font;
+		font-size: 3rem;
+		margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.subhero-content {
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	.order-btn {
+		background-color: $secondary_black;
+		border: 3px solid $primary_yellow;
+		border-radius: 5px;
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 1.6rem;
+		margin-top: 1rem;
+		padding: 1.5rem 4rem;
+	}
+}

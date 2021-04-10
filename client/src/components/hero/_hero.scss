@@ -2,7 +2,7 @@
 $hero-img: '../../img/beertaps2.jpg';
 
 .hero-container {
-	height: 283px;
+	height: 28.3rem;
 	position: relative;
 
 	.hero-img {
@@ -14,10 +14,10 @@ $hero-img: '../../img/beertaps2.jpg';
 
 	.black-up-tab {
 		background-color: $primary_black;
-		height: 40px;
+		height: 4rem;
 		width: 20rem;
 		position: relative;
-		bottom: 40px;
+		bottom: 4rem;
 		left: 50%;
 		transform: translate(-50%);
 
@@ -25,7 +25,7 @@ $hero-img: '../../img/beertaps2.jpg';
 			color: $primary_white;
 			font-family: $primary_font;
 			font-size: 2.6rem;
-			margin: -30px 0 0 0;
+			margin: -3rem 0 0 0;
 			text-align: center;
 		}
 	}
@@ -36,10 +36,10 @@ $hero-img: '../../img/beertaps2.jpg';
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 0 0 40px 40px;
+		border-width: 0 0 4rem 4rem;
 		border-color: transparent transparent $primary_black transparent;
 		position: relative;
-		left: -40px;
+		left: -4rem;
 	}
 
 	.black-up-tab::after {
@@ -48,10 +48,10 @@ $hero-img: '../../img/beertaps2.jpg';
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 40px 0 0 40px;
+		border-width: 4rem 0 0 4rem;
 		border-color: transparent transparent transparent $primary_black;
 		position: relative;
-		left: 200px;
-		top: -44px;
+		left: 20rem;
+		top: -4.4rem;
 	}
 }

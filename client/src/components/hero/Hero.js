@@ -1,7 +1,7 @@
 // dependencies
 import React from 'react';
-// images
-// import heroImage from '../../img/beertaps2.jpg';
+// components
+import Subhero from '../subhero/Subhero';
 
 const hero = () => {
 	return (
@@ -10,6 +10,7 @@ const hero = () => {
 			<div className='black-up-tab'>
 				<h3>welcome to</h3>
 			</div>
+			{/* <Subhero /> */}
 		</section>
 	);
 };
