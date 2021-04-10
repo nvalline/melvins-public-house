@@ -45,9 +45,8 @@ nav {
 		right: -100%;
 		background-color: $primary_black;
 		height: 100px;
-		width: 100%;
+		width: 0;
 		opacity: 1;
-		display: none;
 		overflow: hidden;
 		transition: $nav_transition;
 
@@ -71,6 +70,7 @@ nav {
 		display: block;
 		right: 0;
 		opacity: 1;
+		width: 100%;
 		transition: $nav_transition;
 		z-index: 1;
 	}

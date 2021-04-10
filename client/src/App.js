@@ -11,7 +11,6 @@ function App() {
 			<main>
 				<Navbar />
 				<Hero />
-				<p className='main-app'>App</p>
 			</main>
 		</Router>
 	);
