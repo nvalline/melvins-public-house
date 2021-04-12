@@ -5,7 +5,7 @@ import EventTile from './EventTile';
 
 const Events = () => {
 	const [loading, setLoading] = useState(false);
-	const [events, setEvents] = useState(false);
+	const [events, setEvents] = useState(true);
 
 	if (loading) {
 		console.log('LOADING');

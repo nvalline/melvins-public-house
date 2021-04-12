@@ -30,6 +30,16 @@ body {
 	}
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
 @import './components/navbar/nav';
 @import './components/tabs';
 @import './components/hero/hero';

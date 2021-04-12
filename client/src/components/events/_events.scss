@@ -7,8 +7,7 @@
 	.events-title {
 		color: $primary_white;
 		font-family: $primary_font;
-		font-size: 2.4rem;
-		margin: 0;
+		font-size: 2.2rem;
 		position: relative;
 		text-align: center;
 		text-transform: uppercase;
@@ -22,5 +21,68 @@
 		font-weight: 400;
 		margin: 4rem 0 0 0;
 		text-align: center;
+	}
+
+	.event-block {
+		background-color: #f1cb63;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 1.5rem auto 0;
+		padding: 2rem;
+
+		.event-date {
+			color: $primary_black;
+			font-family: $secondary_font;
+			font-size: 1.4rem;
+			text-align: center;
+		}
+
+		.event-name-block {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 1rem;
+
+			.event-icon {
+				color: $primary_black;
+				font-size: 2rem;
+				margin-right: 1rem;
+			}
+
+			.event-name {
+				color: $primary_black;
+				font-family: $secondary_font;
+				font-size: 2rem;
+			}
+		}
+
+		.event-teams {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 1rem;
+
+			.team {
+				color: $primary_black;
+				font-family: $secondary_font;
+				font-size: 1.2rem;
+				font-weight: 400;
+			}
+
+			.home-team {
+				font-weight: bold;
+				margin-right: 1rem;
+			}
+		}
+
+		.event-loc {
+			color: $primary_black;
+			font-family: $secondary_font;
+			font-size: 1.2rem;
+			margin-top: 1rem;
+		}
 	}
 }
