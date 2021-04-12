@@ -1,0 +1,71 @@
+// BLACK TAB - UP
+.black-up-tab {
+	background-color: $primary_black;
+	height: 4rem;
+	width: 20rem;
+	position: relative;
+	bottom: 4rem;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.black-up-tab::before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 4rem 4rem;
+	border-color: transparent transparent $primary_black transparent;
+	position: relative;
+	left: -4rem;
+}
+
+.black-up-tab::after {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4rem 0 0 4rem;
+	border-color: transparent transparent transparent $primary_black;
+	position: relative;
+	left: 20rem;
+	top: -4.4rem;
+}
+
+// BLACK TAB - DOWN
+.black-down-tab {
+	background-color: $primary_black;
+	height: 4rem;
+	width: 20rem;
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.black-down-tab::before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 4rem 4rem 0;
+	border-color: transparent $primary_black transparent transparent;
+	position: relative;
+	left: -4rem;
+}
+
+.black-down-tab::after {
+	content: '';
+	display: inline;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4rem 4rem 0 0;
+	border-color: $primary_black transparent transparent transparent;
+	position: relative;
+	left: 20rem;
+	top: -3.2rem;
+}

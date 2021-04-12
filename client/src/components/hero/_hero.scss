@@ -12,46 +12,11 @@ $hero-img: '../../img/beertaps2.jpg';
 		height: 100%;
 	}
 
-	.black-up-tab {
-		background-color: $primary_black;
-		height: 4rem;
-		width: 20rem;
-		position: relative;
-		bottom: 4rem;
-		left: 50%;
-		transform: translate(-50%);
-
-		h3 {
-			color: $primary_white;
-			font-family: $primary_font;
-			font-size: 2.6rem;
-			margin: -3rem 0 0 0;
-			text-align: center;
-		}
-	}
-
-	.black-up-tab::before {
-		content: '';
-		display: inline-block;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 0 0 4rem 4rem;
-		border-color: transparent transparent $primary_black transparent;
-		position: relative;
-		left: -4rem;
-	}
-
-	.black-up-tab::after {
-		content: '';
-		display: inline-block;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 4rem 0 0 4rem;
-		border-color: transparent transparent transparent $primary_black;
-		position: relative;
-		left: 20rem;
-		top: -4.4rem;
+	h3 {
+		color: $primary_white;
+		font-family: $primary_font;
+		font-size: 2.6rem;
+		margin: -3rem 0 0 0;
+		text-align: center;
 	}
 }
