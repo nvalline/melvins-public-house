@@ -4,6 +4,7 @@ import React from 'react';
 import Hero from '../components/hero/Hero';
 import Subhero from '../components/subhero/Subhero';
 import Events from '../components/events/Events';
+import Specials from '../components/specials/Specials';
 
 const Home = () => {
 	return (
@@ -11,6 +12,7 @@ const Home = () => {
 			<Hero />
 			<Subhero />
 			<Events />
+			<Specials />
 		</>
 	);
 };

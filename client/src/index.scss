@@ -4,12 +4,14 @@
 $primary_black: #242424;
 $primary_yellow: #efaf00;
 $primary_white: #eeeeee;
-$secondary_black: #454545;
+$secondary_black: #515151;
+$secondary_yellow: #f1cb63;
 
 // fonts
 $primary_font: 'Bentham', serif;
 $secondary_font: 'Montserrat', sans-serif;
 
+// GLOBAL STYLES
 html {
 	font-size: 10px;
 }
@@ -40,8 +42,24 @@ p {
 	margin: 0;
 }
 
+// FONT COLORS
+.ft-white {
+	color: $primary_white;
+}
+
+.ft-blk {
+	color: $primary_black;
+}
+
+.date {
+	font-family: $secondary_font;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
 @import './components/navbar/nav';
 @import './components/tabs';
 @import './components/hero/hero';
 @import './components/subhero/subhero';
 @import './components/events/events';
+@import './components/specials/specials';

@@ -4,7 +4,7 @@ import React from 'react';
 const EventTile = () => {
 	return (
 		<div className='event-block'>
-			<p className='event-date'>Thursday, 2nd December at 4:15pm</p>
+			<p className='date ft-blk'>Thursday, 2nd December at 4:15pm</p>
 			<div className='event-name-block'>
 				{/* set up dynamic icons. file with icon class names */}
 				<i className='event-icon fas fa-football-ball'></i>

@@ -4,16 +4,6 @@
 	padding: 0 1.5rem 1.5rem 1.5rem;
 	position: relative;
 
-	.events-title {
-		color: $primary_white;
-		font-family: $primary_font;
-		font-size: 2.2rem;
-		position: relative;
-		text-align: center;
-		text-transform: uppercase;
-		top: -100%;
-	}
-
 	.events-default {
 		color: $primary_white;
 		font-family: $secondary_font;
@@ -24,7 +14,7 @@
 	}
 
 	.event-block {
-		background-color: #f1cb63;
+		background-color: $secondary_yellow;
 		border-radius: 5px;
 		display: flex;
 		flex-direction: column;
@@ -32,13 +22,6 @@
 		justify-content: center;
 		margin: 1.5rem auto 0;
 		padding: 2rem;
-
-		.event-date {
-			color: $primary_black;
-			font-family: $secondary_font;
-			font-size: 1.4rem;
-			text-align: center;
-		}
 
 		.event-name-block {
 			display: flex;

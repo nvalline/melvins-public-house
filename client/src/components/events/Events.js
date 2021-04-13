@@ -20,7 +20,7 @@ const Events = () => {
 	return (
 		<section className='events-container'>
 			<div className='black-down-tab'>
-				<h2 className='events-title'>Events</h2>
+				<h2 className='section-title ft-white'>Events</h2>
 			</div>
 			{events ? <EventTile /> : noEvents()}
 		</section>

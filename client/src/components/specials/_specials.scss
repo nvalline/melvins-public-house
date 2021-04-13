@@ -1,0 +1,44 @@
+.specials-container {
+	background-color: $primary_black;
+	padding: 0 1.5rem 1.5rem 1.5rem;
+	position: relative;
+
+	.specials-default {
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 2rem;
+		font-weight: 400;
+		margin: 4rem 0 0 0;
+		text-align: center;
+	}
+
+	.special-block {
+		background-color: $secondary_black;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 1.5rem auto 0;
+		padding: 2rem;
+
+		.special-name-block {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 1rem;
+
+			.special-icon {
+				color: $primary_white;
+				font-size: 2rem;
+				margin-right: 1rem;
+			}
+
+			.special-name {
+				color: $primary_white;
+				font-family: $secondary_font;
+				font-size: 2rem;
+			}
+		}
+	}
+}
