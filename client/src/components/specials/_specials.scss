@@ -1,6 +1,6 @@
 .specials-container {
 	background-color: $primary_black;
-	padding: 0 1.5rem 1.5rem 1.5rem;
+	padding: 0 1.5rem 2rem 1.5rem;
 	position: relative;
 
 	.specials-default {
@@ -19,7 +19,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin: 1.5rem auto 0;
+		margin: 2rem auto 0;
 		padding: 2rem;
 
 		.special-name-block {

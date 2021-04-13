@@ -1,0 +1,58 @@
+.form-container {
+	background-color: $secondary_black;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 2rem auto 0;
+	padding: 2rem;
+
+	.form-header {
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 2rem;
+		text-align: center;
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+
+	.form-content {
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 1.4rem;
+		font-weight: 400;
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.form-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+		.email {
+			background-color: #c4c4c4;
+			border: none;
+			border-radius: 5px;
+			color: $primary_black;
+			font-family: $secondary_font;
+			font-size: 1.6rem;
+			height: 4rem;
+			padding-left: 1rem;
+			margin-top: 2rem;
+			width: 100%;
+		}
+	}
+
+	.form-disclaimer {
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 1rem;
+		font-weight: 400;
+		margin-top: 2rem;
+		text-align: center;
+	}
+}

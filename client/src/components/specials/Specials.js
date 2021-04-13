@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 // components
 import SpecialTile from './SpecialTile';
+import Subscribe from '../form/Subscribe';
 
 const Specials = () => {
 	const [loading, setLoading] = useState(false);
@@ -23,6 +24,7 @@ const Specials = () => {
 				<h2 className='section-title ft-blk'>Specials</h2>
 			</div>
 			{specials ? <SpecialTile /> : noSpecials()}
+			<Subscribe />
 		</section>
 	);
 };
