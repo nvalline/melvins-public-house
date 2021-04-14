@@ -20,7 +20,7 @@ nav {
 			p {
 				margin: 0;
 
-				span {
+				.sub-logo {
 					display: none;
 				}
 			}
@@ -70,8 +70,25 @@ nav {
 		display: block;
 		right: 0;
 		opacity: 1;
+		padding: 0;
 		width: 100%;
 		transition: $nav_transition;
 		z-index: 1;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	nav {
+		.mobile-nav {
+			padding: 1.7rem 2rem;
+
+			.logo p .sub-logo {
+				display: unset;
+			}
+		}
+
+		.links-container.active {
+			padding: 1rem 0;
+		}
 	}
 }

@@ -14,7 +14,7 @@ const Navbar = () => {
 				<div className='mobile-nav'>
 					<Link to='/' className='logo'>
 						<p>
-							melvins <span>public house</span>
+							melvins <span className='sub-logo'>public house</span>
 						</p>
 					</Link>
 

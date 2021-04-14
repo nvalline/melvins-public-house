@@ -57,6 +57,12 @@ p {
 	text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+	html {
+		font-size: 12px;
+	}
+}
+
 @import './components/navbar/nav';
 @import './components/tabs';
 @import './components/buttons';
