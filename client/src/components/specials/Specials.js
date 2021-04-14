@@ -25,6 +25,7 @@ const Specials = () => {
 			</div>
 			{specials ? <SpecialTile /> : noSpecials()}
 			<Subscribe />
+			<div className='yellow-up-tab'></div>
 		</section>
 	);
 };

@@ -106,6 +106,41 @@
 	top: -3rem;
 }
 
+// YELLOW TAB - UP
+.yellow-up-tab {
+	background-color: $primary_yellow;
+	height: 4rem;
+	width: 20rem;
+	position: relative;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.yellow-up-tab::before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 4rem 4rem;
+	border-color: transparent transparent $primary_yellow transparent;
+	position: relative;
+	left: -4rem;
+}
+
+.yellow-up-tab::after {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4rem 0 0 4rem;
+	border-color: transparent transparent transparent $primary_yellow;
+	position: relative;
+	left: 16rem;
+}
+
 // TAB TITLES
 .section-title {
 	font-family: $primary_font;

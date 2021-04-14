@@ -1,0 +1,20 @@
+.footer-container {
+	background-color: $primary_black;
+	// height: 6rem;
+	width: 100%;
+
+	.footer-trim {
+		background-color: $primary_yellow;
+		height: 0.8rem;
+		width: 100%;
+	}
+
+	.footer-content {
+		color: $primary_white;
+		font-family: $secondary_font;
+		font-size: 1.2rem;
+		font-weight: 400;
+		padding: 2.5rem 0;
+		text-align: center;
+	}
+}
