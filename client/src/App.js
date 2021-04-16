@@ -6,13 +6,21 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 // pages
 import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
 	return (
 		<Router>
 			<main>
 				<Navbar />
-				<Home />
+				<Switch>
+					<Route exact path='/'>
+						<Home />
+					</Route>
+					<Route path='/about'>
+						<About />
+					</Route>
+				</Switch>
 				<Footer />
 			</main>
 		</Router>

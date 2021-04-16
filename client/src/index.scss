@@ -57,6 +57,12 @@ p {
 	text-align: center;
 }
 
+.trim {
+	background-color: $primary_yellow;
+	height: 0.8rem;
+	width: 100%;
+}
+
 // MIN SCREEN SIZE 768PX
 @media only screen and (min-width: 768px) {
 	html {
@@ -79,4 +85,5 @@ p {
 @import './components/events/events';
 @import './components/specials/specials';
 @import './components/form/subscribe';
+@import './components/about/about';
 @import './components/footer/footer';

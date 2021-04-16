@@ -30,7 +30,6 @@ const Specials = () => {
 				{specials ? <SpecialTile /> : noSpecials()}
 			</div>
 			<Subscribe />
-			<div className='yellow-up-tab'></div>
 		</section>
 	);
 };
