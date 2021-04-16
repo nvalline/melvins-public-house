@@ -69,3 +69,23 @@
 		}
 	}
 }
+
+// MIN SCREEN WIDTH 768PX
+@media only screen and (min-width: 768px) {
+	.events-container .event-block {
+		width: 40rem;
+	}
+}
+
+// MIN SCREEN WIDTH 992PX
+@media only screen and (min-width: 992px) {
+	.events-container .events-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.event-block {
+			width: 30rem;
+		}
+	}
+}

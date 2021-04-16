@@ -22,7 +22,12 @@ const Events = () => {
 			<div className='black-down-tab'>
 				<h2 className='section-title ft-white'>Events</h2>
 			</div>
-			{events ? <EventTile /> : noEvents()}
+			<div className='events-list'>
+				{events ? <EventTile /> : noEvents()}
+				{events ? <EventTile /> : noEvents()}
+				{events ? <EventTile /> : noEvents()}
+				{events ? <EventTile /> : noEvents()}
+			</div>
 		</section>
 	);
 };

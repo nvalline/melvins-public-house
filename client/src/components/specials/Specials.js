@@ -23,7 +23,12 @@ const Specials = () => {
 			<div className='yellow-down-tab'>
 				<h2 className='section-title ft-blk'>Specials</h2>
 			</div>
-			{specials ? <SpecialTile /> : noSpecials()}
+			<div className='special-list'>
+				{specials ? <SpecialTile /> : noSpecials()}
+				{specials ? <SpecialTile /> : noSpecials()}
+				{specials ? <SpecialTile /> : noSpecials()}
+				{specials ? <SpecialTile /> : noSpecials()}
+			</div>
 			<Subscribe />
 			<div className='yellow-up-tab'></div>
 		</section>

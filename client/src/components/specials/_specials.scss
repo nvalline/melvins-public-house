@@ -42,3 +42,29 @@
 		}
 	}
 }
+
+// MIN SCREEN SIZE 768PX
+@media only screen and (min-width: 768px) {
+	.specials-container {
+		.special-block {
+			width: 40rem;
+		}
+
+		.form-container {
+			width: 40rem;
+		}
+	}
+}
+
+// MIN SCREEN SIZE 992PX
+@media only screen and (min-width: 992px) {
+	.specials-container .special-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.special-block {
+			width: 30rem;
+		}
+	}
+}

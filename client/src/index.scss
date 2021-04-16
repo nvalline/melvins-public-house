@@ -57,9 +57,17 @@ p {
 	text-align: center;
 }
 
+// MIN SCREEN SIZE 768PX
 @media only screen and (min-width: 768px) {
 	html {
 		font-size: 12px;
+	}
+}
+
+// MIN SCREEN SIZE 992PX
+@media only screen and (min-width: 992px) {
+	html {
+		font-size: 13px;
 	}
 }
 
