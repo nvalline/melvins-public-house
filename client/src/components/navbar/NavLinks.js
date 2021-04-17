@@ -6,12 +6,12 @@ export const NavLinks = [
 	},
 	{
 		title: 'about',
-		url: '#',
+		url: '/about',
 		className: 'link'
 	},
 	{
 		title: 'contact',
-		url: '#',
+		url: '/contact',
 		className: 'link'
 	}
 ];
