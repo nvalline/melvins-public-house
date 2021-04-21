@@ -1,8 +1,7 @@
 // dependencies
 import React from 'react';
-import { Link } from 'react-router-dom';
 // components
-import { SocialLinks } from '../../Links';
+import SocialIcons from '../social/SocialIcons';
 
 const ContactContent = () => {
 	return (
@@ -31,15 +30,7 @@ const ContactContent = () => {
 				</div>
 				<div className='social'>
 					<h4 className='contact-title'>social</h4>
-					<div className='social-links'>
-						{SocialLinks.map((link, index) => {
-							return (
-								<Link to={link.url} key={index}>
-									<i className={link.className}></i>
-								</Link>
-							);
-						})}
-					</div>
+					<SocialIcons />
 				</div>
 			</article>
 		</>
