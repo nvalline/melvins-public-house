@@ -6,6 +6,7 @@ $primary_yellow: #efaf00;
 $primary_white: #eeeeee;
 $secondary_black: #515151;
 $secondary_yellow: #f1cb63;
+$hover_white: #a7a7a7;
 
 // fonts
 $primary_font: 'Bentham', serif;
@@ -78,13 +79,14 @@ p {
 }
 
 @import './components/navbar/nav';
-@import './components/tabs';
-@import './components/buttons';
+@import './components/tabs/tabs';
+@import './components/buttons/buttons';
 @import './components/hero/hero';
 @import './components/subhero/subhero';
 @import './components/events/events';
 @import './components/specials/specials';
-@import './components/form/subscribe';
+@import './components/forms/subscribe';
 @import './components/about/about';
 @import './components/contact/contact';
+@import './components/forms/login';
 @import './components/footer/footer';

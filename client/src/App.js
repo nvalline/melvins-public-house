@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Login from './pages/Login';
 
 function App() {
 	return (
@@ -23,6 +24,9 @@ function App() {
 					</Route>
 					<Route path='/contact'>
 						<Contact />
+					</Route>
+					<Route path='/login'>
+						<Login />
 					</Route>
 				</Switch>
 				<Footer />
