@@ -36,11 +36,59 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			margin-top: 1rem;
 			width: 15rem;
 
 			.fab {
 				color: $primary-white;
 				font-size: 2.5rem;
+			}
+		}
+	}
+}
+
+// MIN SCREEN SIZE 768PX
+@media only screen and (min-width: 768px) {
+	.contact-container .contact-img {
+		width: 75%;
+	}
+}
+
+// MIN SCREEN SIZE 992PX
+@media only screen and (min-width: 992px) {
+	.contact-container {
+		.contact-img {
+			max-width: 695px;
+		}
+
+		.contact-block {
+			margin: 0 auto;
+			min-height: 22rem;
+			display: grid;
+			grid-template-areas:
+				'hours phone address'
+				'. social .';
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto auto;
+
+			.hours {
+				grid-area: hours;
+			}
+
+			.address {
+				grid-area: address;
+			}
+
+			.phone {
+				grid-area: phone;
+			}
+
+			.social {
+				grid-area: social;
+
+				.social-links {
+					width: unset;
+				}
 			}
 		}
 	}
