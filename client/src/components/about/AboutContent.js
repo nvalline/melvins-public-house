@@ -1,13 +1,13 @@
 // dependencies
 import React from 'react';
+// components
+import YellowDnTab from '../tabs/YellowDnTab';
 
 const AboutContent = () => {
 	return (
 		<>
 			<div className='trim'></div>
-			<div className='yellow-down-tab'>
-				<h3 className='section-title ft-blk'>about</h3>
-			</div>
+			<YellowDnTab title='about' />
 			<article className='bio-block'>
 				<p className='bio ft-white'>
 					Melvins Public House is the product of a house divided. Melissa

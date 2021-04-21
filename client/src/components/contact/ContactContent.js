@@ -2,14 +2,13 @@
 import React from 'react';
 // components
 import SocialIcons from '../social/SocialIcons';
+import YellowDnTab from '../tabs/YellowDnTab';
 
 const ContactContent = () => {
 	return (
 		<>
 			<div className='trim'></div>
-			<div className='yellow-down-tab'>
-				<h3 className='section-title ft-blk'>contact</h3>
-			</div>
+			<YellowDnTab title='contact' />
 			<article className='contact-block'>
 				<div className='hours'>
 					<h4 className='contact-title'>hours</h4>

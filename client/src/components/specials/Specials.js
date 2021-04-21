@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 // components
 import SpecialTile from './SpecialTile';
-import Subscribe from '../form/Subscribe';
+import Subscribe from '../forms/Subscribe';
+import YellowDnTab from '../tabs/YellowDnTab';
 
 const Specials = () => {
 	const [loading, setLoading] = useState(false);
@@ -20,9 +21,10 @@ const Specials = () => {
 
 	return (
 		<section className='specials-container'>
-			<div className='yellow-down-tab'>
+			{/* <div className='yellow-down-tab'>
 				<h2 className='section-title ft-blk'>Specials</h2>
-			</div>
+			</div> */}
+			<YellowDnTab title='specials' />
 			<div className='special-list'>
 				{specials ? <SpecialTile /> : noSpecials()}
 				{specials ? <SpecialTile /> : noSpecials()}

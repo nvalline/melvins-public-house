@@ -2,14 +2,13 @@
 import React from 'react';
 // components
 import LoginForm from '../components/forms/LoginForm';
+import YellowDnTab from '../components/tabs/YellowDnTab';
 
 const Login = () => {
 	return (
 		<section className='login-container'>
 			<div className='trim'></div>
-			<div className='yellow-down-tab'>
-				<h3 className='section-title ft-blk'>login</h3>
-			</div>
+			<YellowDnTab title='login' />
 			<LoginForm />
 		</section>
 	);

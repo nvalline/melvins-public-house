@@ -1,12 +1,11 @@
 // dependencies
 import React from 'react';
 
-const YellowDnTab = () => {
+const YellowDnTab = ({ title }) => {
 	return (
 		<>
-			<div className='trim'></div>
 			<div className='yellow-down-tab'>
-				<h3 className='section-title ft-blk'>login</h3>
+				<h3 className='section-title ft-blk'>{title}</h3>
 			</div>
 		</>
 	);
