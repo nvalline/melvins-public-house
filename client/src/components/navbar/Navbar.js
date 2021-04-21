@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 // components
-import { NavLinks } from './NavLinks';
+import { NavLinks } from '../../Links';
 
 const Navbar = () => {
 	const [showLinks, setShowLinks] = useState(false);
