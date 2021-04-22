@@ -6,6 +6,7 @@ $primary_yellow: #efaf00;
 $primary_white: #eeeeee;
 $secondary_black: #515151;
 $secondary_yellow: #f1cb63;
+$input_gray: #c4c4c4;
 $hover_white: #a7a7a7;
 
 // fonts
@@ -80,7 +81,7 @@ p {
 
 @import './components/navbar/nav';
 @import './components/tabs/tabs';
-@import './components/buttons/buttons';
+@import './components/forms/formItems/buttons';
 @import './components/hero/hero';
 @import './components/subhero/subhero';
 @import './components/events/events';
@@ -89,4 +90,5 @@ p {
 @import './components/about/about';
 @import './components/contact/contact';
 @import './components/forms/login';
+@import './components/dashboard/dashboard';
 @import './components/footer/footer';

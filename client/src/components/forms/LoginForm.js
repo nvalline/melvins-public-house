@@ -2,27 +2,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // components
-import LoginBtn from '../buttons/LoginBtn';
+import { TextInput } from './formItems/formInputs';
+import Button from '../buttons/Button';
 
 const LoginForm = () => {
+	const handleClick = (e) => {
+		e.preventDefault();
+		console.log('Login Btn Clicked');
+	};
+
 	return (
 		<div className='form-container'>
-			<h2 className='form-header'>Welcome Back!</h2>
+			<h2 className='form-header'>Welcome!</h2>
 			<p className='form-content'>Please enter your credentials.</p>
 			<form className='form-block'>
-				<input
+				<TextInput
 					type='email'
 					name='email'
 					className='input'
 					placeholder='Email Address'
 				/>
-				<input
+				<TextInput
 					type='password'
 					name='password'
 					className='input password'
 					placeholder='Password'
 				/>
-				<LoginBtn />
+				<Button
+					type='submit'
+					className='login-btn'
+					onClick={handleClick}
+					text='Login'
+				/>
 			</form>
 			<div className='form-disclaimer'>
 				<p>Forgot password?</p>
