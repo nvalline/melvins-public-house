@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // components
 import { TextInput } from './formItems/formInputs';
-import Button from '../buttons/Button';
+import Button from './formItems/Button';
 
 const LoginForm = () => {
 	const handleClick = (e) => {

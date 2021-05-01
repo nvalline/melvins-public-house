@@ -1,7 +1,7 @@
 // dependencies
 import React from 'react';
 // components
-import Button from '../buttons/Button';
+import Button from '../forms/formItems/Button';
 
 const Subhero = () => {
 	const handleClick = (e) => {

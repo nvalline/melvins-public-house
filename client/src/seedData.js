@@ -57,4 +57,26 @@ export const eventData = [
 	}
 ];
 
-// export const specialsData = [];
+export const specialsData = [
+	{
+		id: 1,
+		title: 'Bloody Mary Bar',
+		date: 'Monday, 6th December, 2021',
+		time: '11:15am',
+		type: 'drink'
+	},
+	{
+		id: 2,
+		title: 'Two for One Apps',
+		date: 'Wednesday, 8th December, 2021',
+		time: '7:00pm - 8:00pm',
+		type: 'food'
+	},
+	{
+		id: 3,
+		title: "Valentine's Day Dinner",
+		date: 'Saturday, 14th February, 2022',
+		time: '5:00pm',
+		type: 'holiday'
+	}
+];

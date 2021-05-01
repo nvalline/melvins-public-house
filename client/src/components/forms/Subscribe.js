@@ -2,7 +2,7 @@
 import React from 'react';
 // components
 import { TextInput } from './formItems/formInputs';
-import Button from '../buttons/Button';
+import Button from './formItems/Button';
 
 const Subscribe = () => {
 	const handleClick = (e) => {
