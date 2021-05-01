@@ -43,6 +43,10 @@
 				color: $primary-white;
 				font-size: 2.5rem;
 			}
+
+			.fab:hover {
+				color: $hover_white;
+			}
 		}
 	}
 }

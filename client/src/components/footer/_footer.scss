@@ -38,6 +38,10 @@
 				color: $primary_white;
 				font-size: 2rem;
 			}
+
+			.fab:hover {
+				color: $hover_white;
+			}
 		}
 	}
 }
