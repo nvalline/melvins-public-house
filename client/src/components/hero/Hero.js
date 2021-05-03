@@ -1,7 +1,5 @@
 // dependencies
 import React from 'react';
-// components
-import Subhero from '../subhero/Subhero';
 
 const hero = () => {
 	return (
@@ -10,7 +8,6 @@ const hero = () => {
 			<div className='black-up-tab'>
 				<h3>welcome to</h3>
 			</div>
-			{/* <Subhero /> */}
 		</section>
 	);
 };

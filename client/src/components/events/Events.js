@@ -1,13 +1,14 @@
 // dependencies
-import React, { useState } from 'react';
+import React from 'react';
 // components
 import EventTile from './EventTile';
+// utils
+import { useGlobalContext } from '../../utils/AppContext';
 
 const Events = () => {
-	const [loading, setLoading] = useState(false);
-	const [events, setEvents] = useState(true);
+	const { isLoading, events } = useGlobalContext();
 
-	if (loading) {
+	if (isLoading) {
 		console.log('LOADING');
 	}
 

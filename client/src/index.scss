@@ -4,6 +4,7 @@
 $primary_black: #242424;
 $primary_yellow: #efaf00;
 $primary_white: #eeeeee;
+$primary_blue: #2c63ee;
 $secondary_black: #515151;
 $secondary_yellow: #f1cb63;
 $input_gray: #c4c4c4;
@@ -23,14 +24,18 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 
-	a {
-		text-decoration: none;
-	}
+	main {
+		// position: relative;
 
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+		a {
+			text-decoration: none;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 	}
 }
 

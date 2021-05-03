@@ -1,15 +1,16 @@
 // dependencies
-import React, { useState } from 'react';
+import React from 'react';
 // components
 import SpecialTile from './SpecialTile';
 import Subscribe from '../forms/Subscribe';
 import YellowDnTab from '../tabs/YellowDnTab';
+// utils
+import { useGlobalContext } from '../../utils/AppContext';
 
 const Specials = () => {
-	const [loading, setLoading] = useState(false);
-	const [specials, setSpecials] = useState(true);
+	const { isLoading, specials } = useGlobalContext();
 
-	if (loading) {
+	if (isLoading) {
 		console.log('LOADING');
 	}
 

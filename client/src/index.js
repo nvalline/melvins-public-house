@@ -6,10 +6,14 @@ import './index.scss';
 // components
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// utils
+import { AppProvider } from './utils/AppContext';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<AppProvider>
+			<App />
+		</AppProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

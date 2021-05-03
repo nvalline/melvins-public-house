@@ -1,15 +1,18 @@
 // Nav Specific Variable
 $nav_transition: all 0.5s ease;
 
-nav {
+.nav-container {
 	background: $primary_black;
-	position: relative;
+	height: 6.5rem;
+	width: 100%;
+	padding: 0 1rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
 
 	.mobile-nav {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-		padding: 1.5rem 2rem;
+		padding: 2rem 2.5rem;
 
 		.logo {
 			color: $primary_white;
@@ -25,80 +28,83 @@ nav {
 				}
 			}
 		}
+	}
 
-		.nav-toggle {
-			background: transparent;
-			border-color: transparent;
-			color: $primary_white;
-			cursor: pointer;
-			font-size: 2.2rem;
-		}
+	.burger-icon {
+		height: 2rem;
+		width: 2rem;
+		position: fixed;
+		top: 2.4rem;
+		right: 3.5rem;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
 
-		.nav-toggle:focus {
-			outline: none;
+		.burger-line {
+			background-color: $primary_white;
+			border-radius: 10px;
+			height: 0.25rem;
+			width: 2rem;
+			transform-origin: 1px;
 		}
 	}
 
-	.links-container {
-		position: absolute;
-		top: 64px;
-		right: -100%;
+	.links {
+		opacity: 0;
+		transform: translateX(100%);
 		background-color: $primary_black;
-		height: 100px;
-		width: 0;
-		opacity: 1;
-		transition: $nav_transition;
-		overflow: hidden;
-
-		.links {
-			padding: 1rem 3rem;
-
-			li {
-				margin-bottom: 0.75rem;
-				text-align: right;
-			}
-
-			.link {
-				color: $primary_white;
-				font-size: 1.6rem;
-				transition: $nav_transition;
-			}
-		}
-	}
-
-	.links-container.active {
-		display: block;
+		border-radius: 0 0 0 30px;
+		width: 100vw;
+		margin-top: 5.5rem;
+		padding: 1.5rem 2rem;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-end;
+		position: fixed;
+		top: 0;
 		right: 0;
-		opacity: 1;
-		padding: 0;
-		width: 100%;
-		transition: $nav_transition;
-		z-index: 1;
+		z-index: 5;
+
+		li {
+			padding: 1.5rem 1rem;
+		}
+
+		.link {
+			color: $primary_white;
+			font-size: 1.6rem;
+		}
 	}
 }
 
 // MIN SCREEN SIZE 768PX
 @media only screen and (min-width: 768px) {
-	nav {
-		.mobile-nav {
-			padding: 1.7rem 2rem;
+	.nav-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0;
 
-			.logo p .sub-logo {
-				display: unset;
-			}
+		.mobile-nav .logo p .sub-logo {
+			display: unset;
 		}
 
-		.links-container.active {
-			padding: 1rem 0;
+		.burger-icon {
+			display: none;
+		}
+
+		.links {
+			opacity: 1;
+			flex-flow: row nowrap;
+			margin-top: 0;
+			padding: 0 2rem;
+			position: unset;
+			width: unset;
 		}
 	}
 }
 
 // MIN SCREEN SIZE 992PX
 @media only screen and (min-width: 992px) {
-	nav {
-		.links-container.active {
-			padding: 1.5rem 0;
-		}
+	.nav-container {
 	}
 }

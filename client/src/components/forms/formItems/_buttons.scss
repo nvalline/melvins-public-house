@@ -15,8 +15,8 @@
 
 // SUBSCRIBE BUTTON
 .subscribe-btn {
-	background-color: #396cef;
-	border: none;
+	background-color: $primary_blue;
+	border: 1px solid $primary_blue;
 	border-radius: 5px;
 	color: $primary_white;
 	cursor: pointer;
@@ -30,8 +30,8 @@
 
 // LOGIN BUTTON
 .login-btn {
-	background-color: #396cef;
-	border: none;
+	background-color: $primary_blue;
+	border: 1px solid $primary_blue;
 	border-radius: 5px;
 	color: $primary_white;
 	cursor: pointer;
@@ -45,8 +45,8 @@
 
 // SUBMIT BUTTON
 .submit-btn {
-	background-color: #396cef;
-	border: none;
+	background-color: $primary_blue;
+	border: 1px solid $primary_blue;
 	border-radius: 5px;
 	color: $primary_white;
 	cursor: pointer;
@@ -76,6 +76,7 @@
 .login-btn:hover,
 .submit-btn:hover {
 	background-color: #003dd8;
+	border: 1px solid $primary_white;
 }
 
 .order-btn:hover,
