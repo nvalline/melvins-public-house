@@ -1,56 +1,64 @@
 // dependencies
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, { useState, useEffect, useRef } from 'react';
 // components
 import RightNav from './RightNav';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
+import {
+	navIconActive,
+	navIconInactive,
+	navMenuActive,
+	navMenuInactive
+} from '../../utils/Animations';
 
 const Burger = () => {
 	const { showLinks, handleNavClick } = useGlobalContext();
+	const [isDisabled, setIsDisabled] = useState('unset');
 
 	let line1Ref = useRef(null);
 	let line2Ref = useRef(null);
 	let line3Ref = useRef(null);
+	let menuRef = useRef(null);
+	let yellowBoxRef = useRef(null);
 
-	const durationTime = 0.3;
-
-	const navIconActive = () => {
-		gsap.to(line1Ref, { duration: durationTime, transform: 'rotate(45deg' });
-		gsap.to(line2Ref, {
-			duration: durationTime,
-			transform: 'translateX(-100%)',
-			opacity: 0
-		});
-		gsap.to(line3Ref, { duration: durationTime, transform: 'rotate(-45deg)' });
+	const disableMenu = () => {
+		setIsDisabled('none');
+		setTimeout(() => {
+			setIsDisabled('unset');
+		}, 1200);
 	};
 
-	const navIconInactive = () => {
-		gsap.to(line1Ref, { duration: durationTime, transform: 'rotate(0deg' });
-		gsap.to(line2Ref, {
-			duration: durationTime,
-			transform: 'translateX(0)',
-			opacity: 1
-		});
-		gsap.to(line3Ref, { duration: durationTime, transform: 'rotate(0deg)' });
+	const handleClick = () => {
+		disableMenu();
+		handleNavClick();
 	};
 
 	useEffect(() => {
 		if (showLinks) {
-			navIconActive();
+			navMenuActive(yellowBoxRef, menuRef);
+			navIconActive(line1Ref, line2Ref, line3Ref);
 		} else {
-			navIconInactive();
+			navMenuInactive(menuRef, yellowBoxRef);
+			navIconInactive(line1Ref, line2Ref, line3Ref);
 		}
 	}, [showLinks]);
 
 	return (
 		<>
-			<div className='burger-icon' onClick={() => handleNavClick()}>
+			<div
+				className='burger-icon'
+				style={{ pointerEvents: isDisabled }}
+				onClick={() => handleClick()}
+			>
 				<div className='burger-line' ref={(el) => (line1Ref = el)}></div>
 				<div className='burger-line' ref={(el) => (line2Ref = el)}></div>
 				<div className='burger-line' ref={(el) => (line3Ref = el)}></div>
 			</div>
-			<RightNav />
+			<div className='yellow-wrapper' ref={(el) => (yellowBoxRef = el)}>
+				<div className='menu-wrapper' ref={(el) => (menuRef = el)}>
+					<RightNav showLinks={showLinks} />
+				</div>
+			</div>
 		</>
 	);
 };

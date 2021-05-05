@@ -2,17 +2,23 @@ export const NavLinks = [
 	{
 		title: 'order online',
 		url: '#',
-		className: 'link'
+		className: 'link',
+		linkRef: 'linkRef1',
+		liRef: 'liRef1'
 	},
 	{
 		title: 'about',
 		url: '/about',
-		className: 'link'
+		className: 'link',
+		linkRef: 'linkRef2',
+		liRef: 'liRef2'
 	},
 	{
 		title: 'contact',
 		url: '/contact',
-		className: 'link'
+		className: 'link',
+		linkRef: 'linkRef3',
+		liRef: 'liRef3'
 	}
 ];
 

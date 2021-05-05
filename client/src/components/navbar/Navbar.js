@@ -1,10 +1,22 @@
 // dependencies
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { withRouter, Link } from 'react-router-dom';
 // components
 import Burger from './Burger';
+// utils
+import { useGlobalContext } from '../../utils/AppContext';
 
-const Navbar = () => {
+const Navbar = ({ history }) => {
+	const { handlePageChange } = useGlobalContext();
+
+	// useEffect for page changes
+	useEffect(() => {
+		// listen for page changes
+		history.listen(() => {
+			handlePageChange();
+		});
+	});
+
 	return (
 		<nav className='nav-container'>
 			<div className='mobile-nav'>
@@ -19,4 +31,4 @@ const Navbar = () => {
 	);
 };
 
-export default Navbar;
+export default withRouter(Navbar);

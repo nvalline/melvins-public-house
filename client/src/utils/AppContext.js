@@ -8,6 +8,7 @@ const AppContext = React.createContext();
 const initialState = {
 	isLoading: false,
 	showLinks: false,
+	isHover: false,
 	events: true,
 	specials: true
 };
@@ -19,8 +20,18 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'TOGGLE_NAV_LINKS' });
 	};
 
+	const handleHover = () => {
+		dispatch({ type: 'TOGGLE_NAV_HOVER' });
+	};
+
+	const handlePageChange = () => {
+		dispatch({ type: 'NAV_PAGE_CHANGE' });
+	};
+
 	return (
-		<AppContext.Provider value={{ ...state, handleNavClick }}>
+		<AppContext.Provider
+			value={{ ...state, handleNavClick, handleHover, handlePageChange }}
+		>
 			{children}
 		</AppContext.Provider>
 	);

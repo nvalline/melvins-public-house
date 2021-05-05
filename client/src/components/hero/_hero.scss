@@ -20,30 +20,23 @@ $hero-img: '../../img/beertaps2.jpg';
 	}
 }
 
-// MIN SCREEN SIZE 768PX
-@media only screen and (min-width: 768px) {
-	.hero-container {
-		height: 35rem;
-	}
-}
-
 // MIN SCREEN SIZE 992PX
 @media only screen and (min-width: 992px) {
 	.hero-container {
-		height: 38rem;
+		height: 44rem;
 	}
 }
 
 // MIN SCREEN SIZE 1200PX
 @media only screen and (min-width: 1200px) {
 	.hero-container {
-		height: 40rem;
+		height: 48rem;
 	}
 }
 
 // MIN SCREEN SIZE 1400PX
 @media only screen and (min-width: 1400px) {
 	.hero-container {
-		height: 44rem;
+		height: 50rem;
 	}
 }

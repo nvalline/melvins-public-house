@@ -1,47 +1,37 @@
 // dependencies
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
 // components
 import { NavLinks } from '../../Links';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
+import {
+	navLinkHoverActive,
+	navLinkHoverInactive
+} from '../../utils/Animations';
 
 const RightNav = () => {
-	const { showLinks } = useGlobalContext();
+	const { isHover, handleHover } = useGlobalContext();
 
-	let ulRef = useRef(null);
-	const durationTime = 0.5;
-
-	const navMenuActive = () => {
-		gsap.to(ulRef, {
-			transform: 'translateX(0)',
-			opacity: 1,
-			duration: durationTime
-		});
-	};
-
-	const navMenuInactive = () => {
-		gsap.to(ulRef, {
-			transform: 'translateX(100%)',
-			duration: durationTime
-		});
-		gsap.to(ulRef, { opacity: 0, delay: durationTime });
-	};
+	let linkRef1 = useRef(null);
+	let linkRef2 = useRef(null);
+	let linkRef3 = useRef(null);
 
 	useEffect(() => {
-		if (showLinks) {
-			navMenuActive();
-		} else {
-			navMenuInactive();
-		}
-	}, [showLinks]);
+		// if (isHover) {
+		// 	console.log('effect');
+		// }
+	}, [isHover]);
 
 	return (
-		<ul className='links' ref={(el) => (ulRef = el)}>
+		<ul className='links'>
 			{NavLinks.map((link, index) => {
 				return (
-					<li key={index}>
+					<li
+						key={index}
+						ref={(el) => (link.ref = el)}
+						onMouseOver={() => handleHover()}
+					>
 						<Link to={link.url} className={link.className}>
 							{link.title}
 						</Link>
