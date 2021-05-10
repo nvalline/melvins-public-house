@@ -11,11 +11,19 @@ import {
 } from '../../utils/Animations';
 
 const RightNav = () => {
-	const { isHover, handleHover } = useGlobalContext();
+	// ! ADD HOVER EFFECT TO NAV ITEMS
+
+	const { isHover, handleHover, handleNavClick } = useGlobalContext();
 
 	let linkRef1 = useRef(null);
 	let linkRef2 = useRef(null);
 	let linkRef3 = useRef(null);
+
+	const resetState = (title) => {
+		if (title === 'order online') {
+			handleNavClick();
+		}
+	};
 
 	useEffect(() => {
 		// if (isHover) {
@@ -32,7 +40,12 @@ const RightNav = () => {
 						ref={(el) => (link.ref = el)}
 						onMouseOver={() => handleHover()}
 					>
-						<Link to={link.url} className={link.className}>
+						<Link
+							to={link.url}
+							target={link.target}
+							className={link.className}
+							onClick={() => resetState(link.title)}
+						>
 							{link.title}
 						</Link>
 					</li>
