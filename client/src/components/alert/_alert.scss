@@ -1,0 +1,17 @@
+.alert {
+	border-radius: 10px;
+	color: $primary_white;
+	font-family: $secondary_font;
+	font-size: 1.4rem;
+	margin-top: 1.5rem;
+	padding: 1rem 2rem;
+	text-align: center;
+}
+
+.alert-danger {
+	background-color: $danger_red;
+}
+
+.alert-success {
+	background-color: $success_green;
+}

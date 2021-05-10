@@ -8,6 +8,7 @@ const AppContext = React.createContext();
 const initialState = {
 	isLoading: false,
 	showLinks: false,
+	alert: { show: false, msg: '', type: '' },
 	isHover: false,
 	events: true,
 	specials: true
@@ -28,9 +29,19 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'NAV_PAGE_CHANGE' });
 	};
 
+	const showAlert = (show = false, msg = '', type = '') => {
+		dispatch({ type: 'DISPLAY_ALERT', payload: { show, msg, type } });
+	};
+
 	return (
 		<AppContext.Provider
-			value={{ ...state, handleNavClick, handleHover, handlePageChange }}
+			value={{
+				...state,
+				handleNavClick,
+				handleHover,
+				handlePageChange,
+				showAlert
+			}}
 		>
 			{children}
 		</AppContext.Provider>

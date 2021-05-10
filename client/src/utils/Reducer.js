@@ -15,6 +15,10 @@ const reducer = (state, action) => {
 		return { ...state, showLinks: false, isHover: false };
 	}
 
+	if (action.type === 'DISPLAY_ALERT') {
+		return { ...state, alert: action.payload };
+	}
+
 	throw new Error('no matching action type');
 };
 

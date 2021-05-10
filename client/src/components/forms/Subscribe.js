@@ -1,13 +1,30 @@
 // dependencies
-import React from 'react';
+import React, { useState } from 'react';
 // components
 import { TextInput } from './formItems/formInputs';
 import Button from './formItems/Button';
+import Alert from '../alert/Alert';
+// utils
+import { useGlobalContext } from '../../utils/AppContext';
 
 const Subscribe = () => {
+	const { alert, showAlert } = useGlobalContext();
+	const [email, setEmail] = useState('');
+
 	const handleClick = (e) => {
 		e.preventDefault();
-		console.log('Subscribe Btn Clicked');
+
+		if (!email) {
+			showAlert(true, 'Please enter a valid email.', 'danger');
+		} else {
+			showAlert(
+				true,
+				'Thank you for subscribing & joining our family!',
+				'success'
+			);
+		}
+
+		setEmail('');
 	};
 
 	return (
@@ -17,10 +34,13 @@ const Subscribe = () => {
 				Subscribe to our weekly email to stay current on Melvins events and
 				receive special offers.
 			</p>
+			{alert.show && <Alert {...alert} removeAlert={showAlert} />}
 			<form className='form-block'>
 				<TextInput
 					type='email'
 					name='email'
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
 					className='email'
 					placeholder='Email Address'
 				/>

@@ -9,6 +9,8 @@ $secondary_black: #515151;
 $secondary_yellow: #f1cb63;
 $input_gray: #c4c4c4;
 $hover_white: #a7a7a7;
+$danger_red: #a51a1a;
+$success_green: #29a722;
 
 // fonts
 $primary_font: 'Bentham', serif;
@@ -92,6 +94,7 @@ p {
 @import './components/events/events';
 @import './components/specials/specials';
 @import './components/forms/subscribe';
+@import './components/alert/alert.scss';
 @import './components/about/about';
 @import './components/contact/contact';
 @import './components/forms/login';

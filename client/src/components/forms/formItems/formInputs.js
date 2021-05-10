@@ -1,11 +1,20 @@
 // dependencies
 import React from 'react';
 
-export const TextInput = ({ type, name, className, placeholder }) => {
+export const TextInput = ({
+	type,
+	name,
+	value,
+	onChange,
+	className,
+	placeholder
+}) => {
 	return (
 		<input
 			type={type}
 			name={name}
+			value={value}
+			onChange={onChange}
 			className={className}
 			placeholder={placeholder}
 		/>
