@@ -8,10 +8,10 @@ const AppContext = React.createContext();
 const initialState = {
 	isLoading: false,
 	showLinks: false,
-	alert: { show: false, msg: '', type: '' },
-	isHover: false,
-	events: true,
-	specials: true
+	alert: { show: false, msg: '', type: '' }
+	// isHover: false,
+	// events: true,
+	// specials: true
 };
 
 const AppProvider = ({ children }) => {

@@ -21,9 +21,22 @@ export const TextInput = ({
 	);
 };
 
-export const SelectInput = ({ name, id, className, options }) => {
+export const SelectInput = ({
+	name,
+	id,
+	className,
+	options,
+	value,
+	onChange
+}) => {
 	return (
-		<select name={name} id={id} className={className}>
+		<select
+			name={name}
+			id={id}
+			value={value}
+			onChange={onChange}
+			className={className}
+		>
 			{options.map((item, index) => {
 				return (
 					<option key={index} value={item.value}>

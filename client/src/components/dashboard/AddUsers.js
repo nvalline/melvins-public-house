@@ -25,16 +25,20 @@ const AddUsers = () => {
 		<div className='add-block'>
 			<AddUserForm />
 			<div className='user-list-block'>
-				{userData.map((item) => {
-					return (
-						<UserListTile
-							key={item.id}
-							{...item}
-							handleEdit={handleEdit}
-							handleDelete={handleDelete}
-						/>
-					);
-				})}
+				{userData.length < 1 ? (
+					<h3 className='dashboard-default'>No User Accounts</h3>
+				) : (
+					userData.map((item) => {
+						return (
+							<UserListTile
+								key={item.id}
+								{...item}
+								handleEdit={handleEdit}
+								handleDelete={handleDelete}
+							/>
+						);
+					})
+				)}
 				<Button
 					type='button'
 					className='load-more-btn'

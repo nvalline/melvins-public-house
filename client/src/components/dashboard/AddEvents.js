@@ -25,16 +25,20 @@ const AddEvents = () => {
 		<div className='add-block'>
 			<AddEventForm />
 			<div className='event-list-block'>
-				{eventData.map((item) => {
-					return (
-						<EventListTile
-							key={item.id}
-							{...item}
-							handleEdit={handleEdit}
-							handleDelete={handleDelete}
-						/>
-					);
-				})}
+				{eventData < 1 ? (
+					<h3 className='dashboard-default'>No Events Scheduled</h3>
+				) : (
+					eventData.map((item) => {
+						return (
+							<EventListTile
+								key={item.id}
+								{...item}
+								handleEdit={handleEdit}
+								handleDelete={handleDelete}
+							/>
+						);
+					})
+				)}
 				<Button
 					type='button'
 					className='load-more-btn'

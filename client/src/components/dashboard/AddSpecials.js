@@ -25,16 +25,20 @@ const AddSpecials = () => {
 		<div className='add-block'>
 			<AddSpecialForm />
 			<div className='special-list-block'>
-				{specialsData.map((item) => {
-					return (
-						<SpecialListTile
-							key={item.id}
-							{...item}
-							handleEdit={handleEdit}
-							handleDelete={handleDelete}
-						/>
-					);
-				})}
+				{specialsData.length < 1 ? (
+					<h3 className='dashboard-default'>No Specials Scheduled</h3>
+				) : (
+					specialsData.map((item) => {
+						return (
+							<SpecialListTile
+								key={item.id}
+								{...item}
+								handleEdit={handleEdit}
+								handleDelete={handleDelete}
+							/>
+						);
+					})
+				)}
 				<Button
 					type='button'
 					className='load-more-btn'
