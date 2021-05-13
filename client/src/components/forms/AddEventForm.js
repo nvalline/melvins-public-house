@@ -1,32 +1,55 @@
 // dependencies
-import React, { useState } from 'react';
+import React from 'react';
 // components
 import { TextInput, SelectInput, Label } from './formItems/formInputs';
 import Button from './formItems/Button';
 import Alert from '../alert/Alert';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
+import { Api } from '../../utils/Api';
 
 const AddEventForm = () => {
-	const { alert, showAlert } = useGlobalContext();
-	const [title, setTitle] = useState('');
-	const [startDate, setStartDate] = useState('');
-	const [eventType, setEventType] = useState('football');
+	const {
+		alert,
+		showAlert,
+		eventState,
+		handleEventState,
+		clearEventForm
+	} = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		console.log('Add Event Btn Clicked');
 
-		if (!title && !startDate) {
+		if (!eventState.title && !eventState.startDate) {
 			showAlert(true, 'Title & Start Date required', 'danger');
-		} else if (!title) {
+		} else if (!eventState.title) {
 			showAlert(true, 'Title required', 'danger');
-		} else if (!startDate) {
+		} else if (!eventState.startDate) {
 			showAlert(true, 'Start Date required', 'danger');
 		}
 
-		setTitle('');
-		setStartDate('');
+		// ! POST eventState to DB
+		console.log('EVENTSTATE', eventState);
+		if (eventState.title && eventState.startDate && eventState.endDate) {
+			let formData = {
+				title: eventState.title,
+				startDate: eventState.startDate,
+				endDate: eventState.endDate,
+				location: eventState.location,
+				eventType: eventState.eventType,
+				otherType: eventState.otherType,
+				homeTeam: eventState.homeTeam,
+				awayTeam: eventState.awayTeam
+			};
+
+			Api.saveEvent(formData)
+				.then((res) => {
+					console.log('RES', res);
+					showAlert(true, 'Event has been saved', 'success');
+					clearEventForm();
+				})
+				.catch((err) => console.log(err));
+		}
 	};
 
 	return (
@@ -38,24 +61,26 @@ const AddEventForm = () => {
 				<TextInput
 					type='text'
 					name='title'
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
+					value={eventState.title}
+					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
 				/>
 				<Label htmlFor='date' className='label' text='Start Date' />
 				<TextInput
 					type='datetime-local'
-					name='date'
-					value={startDate}
-					onChange={(e) => setStartDate(e.target.value)}
+					name='startDate'
+					value={eventState.startDate}
+					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
 				/>
 				<Label htmlFor='time' className='label' text='End Date' />
 				<TextInput
 					type='datetime-local'
-					name='time'
+					name='endDate'
+					value={eventState.endDate}
+					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
 				/>
@@ -63,6 +88,8 @@ const AddEventForm = () => {
 				<TextInput
 					type='text'
 					name='location'
+					value={eventState.location}
+					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
 				/>
@@ -83,14 +110,16 @@ const AddEventForm = () => {
 						{ value: 'music', label: 'Music' },
 						{ value: 'other', label: 'Other' }
 					]}
-					value={eventType}
-					onChange={(e) => setEventType(e.target.value)}
+					value={eventState.eventType}
+					onChange={(e) => handleEventState(e)}
 				/>
 				{/* display 'other' input field */}
-				{eventType === 'other' && (
+				{eventState.eventType === 'other' && (
 					<TextInput
 						type='text'
-						name='other'
+						name='otherType'
+						value={eventState.otherType}
+						onChange={(e) => handleEventState(e)}
 						className='input input-other'
 						placeholder='Enter Type'
 					/>
@@ -98,14 +127,18 @@ const AddEventForm = () => {
 				<Label htmlFor='home_team' className='label' text='Home Team' />
 				<TextInput
 					type='text'
-					name='home_team'
+					name='homeTeam'
+					value={eventState.homeTeam}
+					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
 				/>
 				<Label htmlFor='away_team' className='label' text='Away Team' />
 				<TextInput
 					type='text'
-					name='away_team'
+					name='awayTeam'
+					value={eventState.awayTeam}
+					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
 				/>

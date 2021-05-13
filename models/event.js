@@ -14,17 +14,20 @@ const eventSchema = new Schema({
 		type: Date
 		//* required: true
 	},
-	eventLocation: {
+	location: {
 		type: String
 	},
 	eventType: {
 		type: String,
 		required: true
 	},
-	eventHomeTeam: {
+	otherType: {
 		type: String
 	},
-	eventAwayTeam: {
+	homeTeam: {
+		type: String
+	},
+	awayTeam: {
 		type: String
 	}
 });

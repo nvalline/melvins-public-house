@@ -8,7 +8,18 @@ const AppContext = React.createContext();
 const initialState = {
 	isLoading: false,
 	showLinks: false,
-	alert: { show: false, msg: '', type: '' }
+	alert: { show: false, msg: '', type: '' },
+	eventState: {
+		id: '',
+		title: '',
+		startDate: '',
+		endDate: '',
+		location: '',
+		eventType: 'football',
+		otherType: '',
+		homeTeam: '',
+		awayTeam: ''
+	}
 	// isHover: false,
 	// events: true,
 	// specials: true
@@ -33,6 +44,18 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'DISPLAY_ALERT', payload: { show, msg, type } });
 	};
 
+	const handleEventState = (e) => {
+		dispatch({
+			type: 'HANDLE_EVENT_FORM',
+			field: e.target.name,
+			payload: e.target.value
+		});
+	};
+
+	const clearEventForm = () => {
+		dispatch({ type: 'CLEAR_EVENT_FORM' });
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -40,7 +63,9 @@ const AppProvider = ({ children }) => {
 				handleNavClick,
 				handleHover,
 				handlePageChange,
-				showAlert
+				showAlert,
+				handleEventState,
+				clearEventForm
 			}}
 		>
 			{children}

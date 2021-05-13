@@ -19,6 +19,29 @@ const reducer = (state, action) => {
 		return { ...state, alert: action.payload };
 	}
 
+	if (action.type === 'HANDLE_EVENT_FORM') {
+		return {
+			...state,
+			eventState: { ...state.eventState, [action.field]: action.payload }
+		};
+	}
+
+	if (action.type === 'CLEAR_EVENT_FORM') {
+		return {
+			...state,
+			eventState: {
+				title: '',
+				startDate: '',
+				endDate: '',
+				location: '',
+				eventType: 'football',
+				otherType: '',
+				homeTeam: '',
+				awayTeam: ''
+			}
+		};
+	}
+
 	throw new Error('no matching action type');
 };
 

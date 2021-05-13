@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { builtinModules } = require('node:module');
 const usersController = require('../../controllers/usersController');
 
 // matches with '/api/users'

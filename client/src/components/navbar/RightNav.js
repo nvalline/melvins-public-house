@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 import { NavLinks } from '../../Links';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
-import {
-	navLinkHoverActive,
-	navLinkHoverInactive
-} from '../../utils/Animations';
+// import {
+// 	navLinkHoverActive,
+// 	navLinkHoverInactive
+// } from '../../utils/Animations';
 
 const RightNav = () => {
 	// ! ADD HOVER EFFECT TO NAV ITEMS
 
 	const { isHover, handleHover, handleNavClick } = useGlobalContext();
 
-	let linkRef1 = useRef(null);
-	let linkRef2 = useRef(null);
-	let linkRef3 = useRef(null);
+	// let linkRef1 = useRef(null);
+	// let linkRef2 = useRef(null);
+	// let linkRef3 = useRef(null);
 
 	const resetState = (title) => {
 		if (title === 'order online') {
