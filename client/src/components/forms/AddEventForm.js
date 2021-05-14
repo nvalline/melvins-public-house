@@ -28,8 +28,7 @@ const AddEventForm = () => {
 			showAlert(true, 'Start Date required', 'danger');
 		}
 
-		// ! POST eventState to DB
-		console.log('EVENTSTATE', eventState);
+		// POST eventState to DB
 		if (eventState.title && eventState.startDate && eventState.endDate) {
 			let formData = {
 				title: eventState.title,
@@ -44,7 +43,6 @@ const AddEventForm = () => {
 
 			Api.saveEvent(formData)
 				.then((res) => {
-					console.log('RES', res);
 					showAlert(true, 'Event has been saved', 'success');
 					clearEventForm();
 				})
