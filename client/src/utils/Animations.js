@@ -61,3 +61,12 @@ export const navLinkHoverActive = (node) => {
 		duration: 0.3
 	});
 };
+
+export const loadingSpin = (node) => {
+	gsap.to(node, {
+		duration: 1,
+		rotation: '+=360',
+		repeat: -1,
+		transformOrigin: '50% 50%'
+	});
+};

@@ -59,32 +59,37 @@
 		}
 	}
 
-	.tile {
-		background-color: $secondary_black;
-		border-radius: 5px;
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 1rem;
-		padding: 2rem;
+	.list-block {
+		margin: 3rem 0;
 		width: 25rem;
 
-		.info {
-			color: $primary_white;
-			font-family: $secondary_font;
+		.tile {
+			background-color: $secondary_black;
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+			padding: 2rem;
+			width: 25rem;
 
-			.tile-title {
-				font-size: 1.2rem;
-				text-transform: capitalize;
-			}
+			.info {
+				color: $primary_white;
+				font-family: $secondary_font;
 
-			p {
-				font-size: 1rem;
-				font-weight: 400;
-				margin-top: 1rem;
-			}
+				.tile-title {
+					font-size: 1.2rem;
+					text-transform: capitalize;
+				}
 
-			.tile-role {
-				text-transform: capitalize;
+				p {
+					font-size: 1rem;
+					font-weight: 400;
+					margin-top: 1rem;
+				}
+
+				.tile-role {
+					text-transform: capitalize;
+				}
 			}
 		}
 	}
@@ -106,10 +111,6 @@
 // MIN SCREEN SIZE 768PX
 @media only screen and (min-width: 768px) {
 	.dashboard-container {
-		.dashboard-default {
-			width: 29rem;
-		}
-
 		.add-block {
 			flex-direction: row;
 			align-items: flex-start;

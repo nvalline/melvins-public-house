@@ -4,10 +4,15 @@ import React from 'react';
 import AddEventForm from '../forms/AddEventForm';
 import EventListTile from '../dashboard/EventListTile';
 import Button from '../forms/formItems/Button';
+import Loading from '../loading/Loading';
+// utils
+import { useGlobalContext } from '../../utils/AppContext';
 // seedData
 import { eventData } from '../../seedData';
 
 const AddEvents = () => {
+	const { isLoading, events } = useGlobalContext();
+
 	const handleClick = (e) => {
 		e.preventDefault();
 		console.log('Load More Events Btn Clicked');
@@ -21,24 +26,54 @@ const AddEvents = () => {
 		console.log(`Delete Btn Clicked, id: ${id}`);
 	};
 
+	if (isLoading) {
+		return (
+			<div className='add-block'>
+				<AddEventForm />
+				<div className='list-block'>
+					<Loading color='loading-white' />
+					<Button
+						type='button'
+						className='load-more-btn'
+						onClick={handleClick}
+						text='Load More'
+					/>
+				</div>
+			</div>
+		);
+	}
+
+	if (!events) {
+		return (
+			<div className='add-block'>
+				<AddEventForm />
+				<div className='list-block'>
+					<h3 className='dashboard-default'>No Events Scheduled</h3>
+					<Button
+						type='button'
+						className='load-more-btn'
+						onClick={handleClick}
+						text='Load More'
+					/>
+				</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className='add-block'>
 			<AddEventForm />
-			<div className='event-list-block'>
-				{eventData < 1 ? (
-					<h3 className='dashboard-default'>No Events Scheduled</h3>
-				) : (
-					eventData.map((item) => {
-						return (
-							<EventListTile
-								key={item.id}
-								{...item}
-								handleEdit={handleEdit}
-								handleDelete={handleDelete}
-							/>
-						);
-					})
-				)}
+			<div className='list-block'>
+				{eventData.map((item) => {
+					return (
+						<EventListTile
+							key={item.id}
+							{...item}
+							handleEdit={handleEdit}
+							handleDelete={handleDelete}
+						/>
+					);
+				})}
 				<Button
 					type='button'
 					className='load-more-btn'

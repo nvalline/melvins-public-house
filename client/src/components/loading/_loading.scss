@@ -1,0 +1,18 @@
+.loading-wrapper {
+	margin: 4rem auto 0;
+	text-align: center;
+	width: 20%;
+
+	.loading-el {
+		font-family: $primary_font;
+		font-size: 4rem;
+	}
+
+	.loading-white {
+		color: $primary_white;
+	}
+
+	.loading-black {
+		color: $primary_black;
+	}
+}

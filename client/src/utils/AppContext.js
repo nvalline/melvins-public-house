@@ -19,10 +19,11 @@ const initialState = {
 		otherType: '',
 		homeTeam: '',
 		awayTeam: ''
-	}
+	},
 	// isHover: false,
-	// events: true,
-	// specials: true
+	users: true,
+	events: true,
+	specials: true
 };
 
 const AppProvider = ({ children }) => {
