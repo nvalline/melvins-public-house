@@ -34,10 +34,30 @@ const reducer = (state, action) => {
 				startDate: '',
 				endDate: '',
 				location: '',
-				eventType: 'football',
+				eventType: '',
 				otherType: '',
 				homeTeam: '',
 				awayTeam: ''
+			}
+		};
+	}
+
+	if (action.type === 'HANDLE_SPECIAL_FORM') {
+		return {
+			...state,
+			specialState: { ...state.specialState, [action.field]: action.payload }
+		};
+	}
+
+	if (action.type === 'CLEAR_SPECIAL_FORM') {
+		return {
+			...state,
+			specialState: {
+				title: '',
+				startDate: '',
+				endDate: '',
+				specialType: '',
+				otherType: ''
 			}
 		};
 	}

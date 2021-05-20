@@ -9,16 +9,30 @@ const initialState = {
 	isLoading: false,
 	showLinks: false,
 	alert: { show: false, msg: '', type: '' },
+	usersState: {
+		id: '',
+		fullName: '',
+		email: '',
+		role: ''
+	},
 	eventState: {
 		id: '',
 		title: '',
 		startDate: '',
 		endDate: '',
 		location: '',
-		eventType: 'football',
+		eventType: '',
 		otherType: '',
 		homeTeam: '',
 		awayTeam: ''
+	},
+	specialState: {
+		id: '',
+		title: '',
+		startDate: '',
+		endDate: '',
+		specialType: '',
+		otherType: ''
 	},
 	// isHover: false,
 	users: true,
@@ -53,8 +67,20 @@ const AppProvider = ({ children }) => {
 		});
 	};
 
+	const handleSpecialState = (e) => {
+		dispatch({
+			type: 'HANDLE_SPECIAL_FORM',
+			field: e.target.name,
+			payload: e.target.value
+		});
+	};
+
 	const clearEventForm = () => {
 		dispatch({ type: 'CLEAR_EVENT_FORM' });
+	};
+
+	const clearSpecialForm = () => {
+		dispatch({ type: 'CLEAR_SPECIAL_FORM' });
 	};
 
 	return (
@@ -66,7 +92,9 @@ const AppProvider = ({ children }) => {
 				handlePageChange,
 				showAlert,
 				handleEventState,
-				clearEventForm
+				clearEventForm,
+				handleSpecialState,
+				clearSpecialForm
 			}}
 		>
 			{children}

@@ -20,12 +20,14 @@ const AddEventForm = () => {
 	const handleClick = (e) => {
 		e.preventDefault();
 
-		if (!eventState.title && !eventState.startDate) {
-			showAlert(true, 'Title & Start Date required', 'danger');
+		if (!eventState.title && !eventState.startDate && !eventState.endDate) {
+			showAlert(true, 'Title & Dates required', 'danger');
 		} else if (!eventState.title) {
 			showAlert(true, 'Title required', 'danger');
 		} else if (!eventState.startDate) {
 			showAlert(true, 'Start Date required', 'danger');
+		} else if (!eventState.endDate) {
+			showAlert(true, 'End Date required', 'danger');
 		}
 
 		// POST eventState to DB
@@ -64,7 +66,7 @@ const AddEventForm = () => {
 					className='input'
 					placeholder=''
 				/>
-				<Label htmlFor='date' className='label' text='Start Date' />
+				<Label htmlFor='startDate' className='label' text='Start Date' />
 				<TextInput
 					type='datetime-local'
 					name='startDate'
@@ -73,7 +75,7 @@ const AddEventForm = () => {
 					className='input'
 					placeholder=''
 				/>
-				<Label htmlFor='time' className='label' text='End Date' />
+				<Label htmlFor='endDate' className='label' text='End Date' />
 				<TextInput
 					type='datetime-local'
 					name='endDate'
@@ -122,7 +124,7 @@ const AddEventForm = () => {
 						placeholder='Enter Type'
 					/>
 				)}
-				<Label htmlFor='home_team' className='label' text='Home Team' />
+				<Label htmlFor='homeTeam' className='label' text='Home Team' />
 				<TextInput
 					type='text'
 					name='homeTeam'
@@ -131,7 +133,7 @@ const AddEventForm = () => {
 					className='input'
 					placeholder=''
 				/>
-				<Label htmlFor='away_team' className='label' text='Away Team' />
+				<Label htmlFor='awayTeam' className='label' text='Away Team' />
 				<TextInput
 					type='text'
 					name='awayTeam'

@@ -2,17 +2,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const specialSchema = new Schema({
+	title: {
+		type: String,
+		required: true
+	},
+	startDate: {
+		type: Date,
+		required: true
+	},
+	endDate: {
+		type: Date,
+		required: true
+	},
 	specialType: {
 		type: String,
 		required: true
 	},
-	specialTitle: {
-		type: String,
-		required: true
-	},
-	specialDate: {
-		type: Date
-		//* required: true
+	otherType: {
+		type: String
 	}
 });
 

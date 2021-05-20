@@ -1,67 +1,93 @@
 // dependencies
-import React, { useState } from 'react';
+import React from 'react';
 // components
 import { TextInput, SelectInput, Label } from './formItems/formInputs';
 import Button from './formItems/Button';
 import Alert from '../alert/Alert';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
+import { Api } from '../../utils/Api';
 
 const AddSpecialForm = () => {
-	const { alert, showAlert } = useGlobalContext();
-	const [title, setTitle] = useState('');
-	const [startDate, setStartDate] = useState('');
-	const [specialType, setSpecialType] = useState('');
+	const {
+		alert,
+		showAlert,
+		specialState,
+		handleSpecialState,
+		clearSpecialForm
+	} = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		console.log('Add Special Btn Clicked');
 
-		if (!title && !startDate) {
-			showAlert(true, 'Title & Start Date required', 'danger');
-		} else if (!title) {
+		if (
+			!specialState.title &&
+			!specialState.startDate &&
+			!specialState.endDate
+		) {
+			showAlert(true, 'Title & Dates required', 'danger');
+		} else if (!specialState.title) {
 			showAlert(true, 'Title required', 'danger');
-		} else if (!startDate) {
+		} else if (!specialState.startDate) {
 			showAlert(true, 'Start Date required', 'danger');
+		} else if (!specialState.endDate) {
+			showAlert(true, 'End Date required', 'danger');
 		}
 
-		setTitle('');
-		setStartDate('');
+		// POST specialState to DB
+		if (specialState.title && specialState.startDate && specialState.endDate) {
+			let formData = {
+				title: specialState.title,
+				startDate: specialState.startDate,
+				endDate: specialState.endDate,
+				specialType: specialState.specialType,
+				otherType: specialState.otherType
+			};
+
+			Api.saveSpecial(formData)
+				.then((res) => {
+					showAlert(true, 'Special has been saved', 'success');
+					clearSpecialForm();
+				})
+				.catch((err) => console.log(err));
+		}
 	};
 
 	return (
 		<div className='form-container'>
 			<h2 className='form-header'>Add Special</h2>
+			{alert.show && <Alert {...alert} removeAlert={showAlert} />}
 			<form className='form-block'>
 				<Label htmlFor='title' className='label' text='Special Title' />
-				{alert.show && <Alert {...alert} removeAlert={showAlert} />}
 				<TextInput
 					type='text'
 					name='title'
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
+					value={specialState.title}
+					onChange={(e) => handleSpecialState(e)}
 					className='input'
 					placeholder=''
 				/>
-				<Label htmlFor='date' className='label' text='Start Date' />
+				<Label htmlFor='startDate' className='label' text='Start Date' />
 				<TextInput
 					type='datetime-local'
-					name='date'
-					value={startDate}
-					onChange={(e) => e.target.value}
+					name='startDate'
+					value={specialState.startDate}
+					onChange={(e) => handleSpecialState(e)}
 					className='input'
 					placeholder=''
 				/>
-				<Label htmlFor='time' className='label' text='End Date' />
+				<Label htmlFor='endDate' className='label' text='End Date' />
 				<TextInput
 					type='datetime-local'
-					name='time'
+					name='endDate'
+					value={specialState.endDate}
+					onChange={(e) => handleSpecialState(e)}
 					className='input'
 					placeholder=''
 				/>
-				<Label htmlFor='type' className='label' text='Type' />
+				<Label htmlFor='speicalType' className='label' text='Type' />
 				<SelectInput
-					name='type'
+					name='specialType'
 					id='type'
 					className='input'
 					options={[
@@ -70,14 +96,16 @@ const AddSpecialForm = () => {
 						{ value: 'holiday', label: 'Holiday' },
 						{ value: 'other', label: 'Other' }
 					]}
-					value={specialType}
-					onChange={(e) => setSpecialType(e.target.value)}
+					value={specialState.specialType}
+					onChange={(e) => handleSpecialState(e)}
 				/>
 				{/* display 'other' input field */}
-				{specialType === 'other' && (
+				{specialState.specialType === 'other' && (
 					<TextInput
 						type='text'
-						name='other'
+						name='otherType'
+						value={specialState.otherType}
+						onChange={(e) => handleSpecialState(e)}
 						className='input input-other'
 						placeholder='Enter Type'
 					/>
