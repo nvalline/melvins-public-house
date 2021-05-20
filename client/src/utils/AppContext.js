@@ -1,12 +1,15 @@
 // dependencies
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer } from 'react';
 // utils
 import reducer from './Reducer';
+import { Api } from '../utils/Api';
 
 const AppContext = React.createContext();
 
 const initialState = {
-	isLoading: false,
+	isLoadingUsers: false,
+	isLoadingEvents: false,
+	isLoadingSpecials: false,
 	showLinks: false,
 	alert: { show: false, msg: '', type: '' },
 	usersState: {
@@ -36,7 +39,7 @@ const initialState = {
 	},
 	// isHover: false,
 	users: true,
-	events: true,
+	eventData: [],
 	specials: true
 };
 
@@ -82,6 +85,18 @@ const AppProvider = ({ children }) => {
 	const clearSpecialForm = () => {
 		dispatch({ type: 'CLEAR_SPECIAL_FORM' });
 	};
+
+	const fetchEventData = () => {
+		dispatch({ type: 'LOADING_EVENTS' });
+		Api.getEvents().then((res) => {
+			console.log(res.data);
+			dispatch({ type: 'SET_EVENTS_DATA', payload: res.data });
+		});
+	};
+
+	useEffect(() => {
+		fetchEventData();
+	}, []);
 
 	return (
 		<AppContext.Provider

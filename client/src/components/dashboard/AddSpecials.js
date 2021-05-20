@@ -11,7 +11,7 @@ import { useGlobalContext } from '../../utils/AppContext';
 import { specialsData } from '../../seedData';
 
 const AddSpecials = () => {
-	const { isLoading, specials } = useGlobalContext();
+	const { isLoadingSpecials, specials } = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -26,7 +26,7 @@ const AddSpecials = () => {
 		console.log(`Delete Btn Clicked, id: ${id}`);
 	};
 
-	if (isLoading) {
+	if (isLoadingSpecials) {
 		return (
 			<div className='add-block'>
 				<AddSpecialForm />

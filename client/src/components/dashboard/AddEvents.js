@@ -8,10 +8,10 @@ import Loading from '../loading/Loading';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
 // seedData
-import { eventData } from '../../seedData';
+// import { eventData } from '../../seedData';
 
 const AddEvents = () => {
-	const { isLoading, events } = useGlobalContext();
+	const { isLoadingEvents, eventData } = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -26,7 +26,7 @@ const AddEvents = () => {
 		console.log(`Delete Btn Clicked, id: ${id}`);
 	};
 
-	if (isLoading) {
+	if (isLoadingEvents) {
 		return (
 			<div className='add-block'>
 				<AddEventForm />
@@ -43,7 +43,7 @@ const AddEvents = () => {
 		);
 	}
 
-	if (!events) {
+	if (!eventData) {
 		return (
 			<div className='add-block'>
 				<AddEventForm />
@@ -67,7 +67,7 @@ const AddEvents = () => {
 				{eventData.map((item) => {
 					return (
 						<EventListTile
-							key={item.id}
+							key={item._id}
 							{...item}
 							handleEdit={handleEdit}
 							handleDelete={handleDelete}

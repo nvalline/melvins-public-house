@@ -62,6 +62,14 @@ const reducer = (state, action) => {
 		};
 	}
 
+	if (action.type === 'LOADING_EVENTS') {
+		return { ...state, isLoadingEvents: true };
+	}
+
+	if (action.type === 'SET_EVENTS_DATA') {
+		return { ...state, eventData: action.payload, isLoadingEvents: false };
+	}
+
 	throw new Error('no matching action type');
 };
 

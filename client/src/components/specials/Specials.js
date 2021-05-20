@@ -9,9 +9,9 @@ import Loading from '../loading/Loading';
 import { useGlobalContext } from '../../utils/AppContext';
 
 const Specials = () => {
-	const { isLoading, specials } = useGlobalContext();
+	const { isLoadingSpecials, specials } = useGlobalContext();
 
-	if (isLoading) {
+	if (isLoadingSpecials) {
 		return (
 			<section className='specials-container'>
 				<YellowDnTab title='specials' />

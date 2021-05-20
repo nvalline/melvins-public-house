@@ -4,12 +4,13 @@ import React from 'react';
 const EventListTile = ({
 	id,
 	title,
-	date,
-	time,
-	sport,
+	startDate,
+	endDate,
 	location,
-	home_team,
-	away_team,
+	eventType,
+	otherType,
+	homeTeam,
+	awayTeam,
 	handleDelete,
 	handleEdit
 }) => {
@@ -17,12 +18,12 @@ const EventListTile = ({
 		<div className='tile'>
 			<div className='info'>
 				<h3 className='tile-title'>{title}</h3>
-				<p className='tile-role'>{date}</p>
-				<p>{time}</p>
-				<p>{sport}</p>
+				<p className='tile-role'>{startDate}</p>
+				<p>endDate: {endDate}</p>
+				<p>eventType: {eventType}</p>
 				<p>{location}</p>
-				{home_team && <p>{`Home: ${home_team}`}</p>}
-				{away_team && <p>{`Away: ${away_team}`}</p>}
+				{homeTeam && <p>{`Home: ${homeTeam}`}</p>}
+				{awayTeam && <p>{`Away: ${awayTeam}`}</p>}
 			</div>
 			<div className='tile-icons'>
 				<i className='far fa-edit icon' onClick={() => handleEdit(id)}></i>

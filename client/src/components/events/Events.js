@@ -7,9 +7,9 @@ import Loading from '../loading/Loading';
 import { useGlobalContext } from '../../utils/AppContext';
 
 const Events = () => {
-	const { isLoading, events } = useGlobalContext();
+	const { isLoadingEvents, events } = useGlobalContext();
 
-	if (isLoading) {
+	if (isLoadingEvents) {
 		return (
 			<section className='events-container'>
 				<div className='black-down-tab'>
