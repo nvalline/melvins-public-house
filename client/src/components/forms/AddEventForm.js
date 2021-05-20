@@ -14,7 +14,8 @@ const AddEventForm = () => {
 		showAlert,
 		eventState,
 		handleEventState,
-		clearEventForm
+		clearEventForm,
+		fetchEventData
 	} = useGlobalContext();
 
 	const handleClick = (e) => {
@@ -47,6 +48,7 @@ const AddEventForm = () => {
 				.then((res) => {
 					showAlert(true, 'Event has been saved', 'success');
 					clearEventForm();
+					fetchEventData();
 				})
 				.catch((err) => console.log(err));
 		}

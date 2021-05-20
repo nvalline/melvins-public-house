@@ -4,9 +4,10 @@ import React from 'react';
 const SpecialListTile = ({
 	id,
 	title,
-	date,
-	time,
-	type,
+	startDate,
+	endDate,
+	specialType,
+	otherType,
 	handleEdit,
 	handleDelete
 }) => {
@@ -14,9 +15,9 @@ const SpecialListTile = ({
 		<div className='tile'>
 			<div className='info'>
 				<h3 className='tile-title'>{title}</h3>
-				<p className='tile-role'>{date}</p>
-				<p>{time}</p>
-				<p>{type}</p>
+				<p className='tile-role'>{startDate}</p>
+				<p>endDate: {endDate}</p>
+				<p>specialType: {specialType}</p>
 			</div>
 			<div className='tile-icons'>
 				<i className='far fa-edit icon' onClick={() => handleEdit(id)}></i>

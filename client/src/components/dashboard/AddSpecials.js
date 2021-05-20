@@ -8,10 +8,10 @@ import Loading from '../loading/Loading';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
 // seedData
-import { specialsData } from '../../seedData';
+// import { specialsData } from '../../seedData';
 
 const AddSpecials = () => {
-	const { isLoadingSpecials, specials } = useGlobalContext();
+	const { isLoadingSpecials, specialData } = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -43,7 +43,7 @@ const AddSpecials = () => {
 		);
 	}
 
-	if (!specials) {
+	if (!specialData) {
 		return (
 			<div className='add-block'>
 				<AddSpecialForm />
@@ -64,13 +64,13 @@ const AddSpecials = () => {
 		<div className='add-block'>
 			<AddSpecialForm />
 			<div className='list-block'>
-				{specialsData.length < 1 ? (
+				{specialData.length < 1 ? (
 					<h3 className='dashboard-default'>No Specials Scheduled</h3>
 				) : (
-					specialsData.map((item) => {
+					specialData.map((item) => {
 						return (
 							<SpecialListTile
-								key={item.id}
+								key={item._id}
 								{...item}
 								handleEdit={handleEdit}
 								handleDelete={handleDelete}

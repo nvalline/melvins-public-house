@@ -9,7 +9,7 @@ import Loading from '../loading/Loading';
 import { useGlobalContext } from '../../utils/AppContext';
 
 const Specials = () => {
-	const { isLoadingSpecials, specials } = useGlobalContext();
+	const { isLoadingSpecials, specialData } = useGlobalContext();
 
 	if (isLoadingSpecials) {
 		return (
@@ -21,12 +21,9 @@ const Specials = () => {
 		);
 	}
 
-	if (!specials) {
+	if (!specialData) {
 		return (
 			<section className='specials-container'>
-				{/* <div className='yellow-down-tab'>
-				<h2 className='section-title ft-blk'>Specials</h2>
-			</div> */}
 				<YellowDnTab title='specials' />
 				<h2 className='specials-default'>No Specials Are Currently Offered.</h2>
 				<Subscribe />
@@ -36,15 +33,11 @@ const Specials = () => {
 
 	return (
 		<section className='specials-container'>
-			{/* <div className='yellow-down-tab'>
-				<h2 className='section-title ft-blk'>Specials</h2>
-			</div> */}
 			<YellowDnTab title='specials' />
 			<div className='special-list'>
-				<SpecialTile />
-				{/* {specials ? <SpecialTile /> : noSpecials()}
-				{specials ? <SpecialTile /> : noSpecials()}
-				{specials ? <SpecialTile /> : noSpecials()} */}
+				{specialData.map((item) => {
+					return <SpecialTile key={item._id} {...item} />;
+				})}
 			</div>
 			<Subscribe />
 		</section>

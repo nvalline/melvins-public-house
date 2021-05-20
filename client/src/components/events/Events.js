@@ -7,7 +7,7 @@ import Loading from '../loading/Loading';
 import { useGlobalContext } from '../../utils/AppContext';
 
 const Events = () => {
-	const { isLoadingEvents, events } = useGlobalContext();
+	const { isLoadingEvents, eventData } = useGlobalContext();
 
 	if (isLoadingEvents) {
 		return (
@@ -20,7 +20,7 @@ const Events = () => {
 		);
 	}
 
-	if (!events) {
+	if (!eventData) {
 		return (
 			<section className='events-container'>
 				<div className='black-down-tab'>
@@ -37,10 +37,9 @@ const Events = () => {
 				<h2 className='section-title ft-white'>Events</h2>
 			</div>
 			<div className='events-list'>
-				<EventTile />
-				{/* {events ? <EventTile /> : noEvents()}
-				{events ? <EventTile /> : noEvents()}
-				{events ? <EventTile /> : noEvents()} */}
+				{eventData.map((item) => {
+					return <EventTile key={item._id} {...item} />;
+				})}
 			</div>
 		</section>
 	);

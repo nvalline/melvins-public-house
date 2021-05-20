@@ -14,7 +14,8 @@ const AddSpecialForm = () => {
 		showAlert,
 		specialState,
 		handleSpecialState,
-		clearSpecialForm
+		clearSpecialForm,
+		fetchSpecialData
 	} = useGlobalContext();
 
 	const handleClick = (e) => {
@@ -48,6 +49,7 @@ const AddSpecialForm = () => {
 				.then((res) => {
 					showAlert(true, 'Special has been saved', 'success');
 					clearSpecialForm();
+					fetchSpecialData();
 				})
 				.catch((err) => console.log(err));
 		}

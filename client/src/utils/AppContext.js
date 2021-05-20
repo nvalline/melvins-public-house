@@ -24,7 +24,7 @@ const initialState = {
 		startDate: '',
 		endDate: '',
 		location: '',
-		eventType: '',
+		eventType: 'football',
 		otherType: '',
 		homeTeam: '',
 		awayTeam: ''
@@ -34,13 +34,13 @@ const initialState = {
 		title: '',
 		startDate: '',
 		endDate: '',
-		specialType: '',
+		specialType: 'food',
 		otherType: ''
 	},
 	// isHover: false,
 	users: true,
 	eventData: [],
-	specials: true
+	specialData: []
 };
 
 const AppProvider = ({ children }) => {
@@ -89,13 +89,22 @@ const AppProvider = ({ children }) => {
 	const fetchEventData = () => {
 		dispatch({ type: 'LOADING_EVENTS' });
 		Api.getEvents().then((res) => {
-			console.log(res.data);
+			console.log('EVENT DATA', res.data);
 			dispatch({ type: 'SET_EVENTS_DATA', payload: res.data });
+		});
+	};
+
+	const fetchSpecialData = () => {
+		dispatch({ type: 'LOADING_SPECIALS' });
+		Api.getSpecials().then((res) => {
+			console.log('SPECIALS DATA', res.data);
+			dispatch({ type: 'SET_SPECIALS_DATA', payload: res.data });
 		});
 	};
 
 	useEffect(() => {
 		fetchEventData();
+		fetchSpecialData();
 	}, []);
 
 	return (
@@ -109,7 +118,9 @@ const AppProvider = ({ children }) => {
 				handleEventState,
 				clearEventForm,
 				handleSpecialState,
-				clearSpecialForm
+				clearSpecialForm,
+				fetchEventData,
+				fetchSpecialData
 			}}
 		>
 			{children}

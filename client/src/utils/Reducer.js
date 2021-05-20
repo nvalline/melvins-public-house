@@ -70,6 +70,14 @@ const reducer = (state, action) => {
 		return { ...state, eventData: action.payload, isLoadingEvents: false };
 	}
 
+	if (action.type === 'LOADING_SPECIALS') {
+		return { ...state, isLoadingSpecials: true };
+	}
+
+	if (action.type === 'SET_SPECIALS_DATA') {
+		return { ...state, specialData: action.payload, isLoadingSpecials: false };
+	}
+
 	throw new Error('no matching action type');
 };
 

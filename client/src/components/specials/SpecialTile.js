@@ -1,14 +1,43 @@
 // dependencies
 import React from 'react';
 
-const SpecialTile = () => {
+const SpecialTile = ({
+	id,
+	title,
+	startDate,
+	endDate,
+	specialType,
+	otherType
+}) => {
+	let type = '';
+
+	if (specialType === 'other') {
+		type = otherType;
+	} else {
+		type = specialType;
+	}
+
+	const renderSwitch = (type) => {
+		switch (type) {
+			case 'food':
+				return <i className='special-icon fas fa-utensils'></i>;
+			case 'drink':
+				return <i className='special-icon fas fa-glass-whiskey'></i>;
+			case 'holiday':
+				return <i className='special-icon fas fa-crown'></i>;
+			default:
+				return <i className='special-icon fas fa-crown'></i>;
+		}
+	};
+
 	return (
 		<div className='special-block'>
-			<p className='date ft-white'>Monday, 1st January at 11:00am</p>
+			<p className='date ft-white'>starts: {startDate}</p>
+			<p className='date ft-white'>ends: {endDate}</p>
 			<div className='special-name-block'>
-				{/* set up dynamic icons. file with icon class names */}
-				<i className='special-icon fas fa-glass-whiskey'></i>
-				<h3 className='special-name'>Bloody Mary Bar</h3>
+				{/* dynamic icons */}
+				{renderSwitch(type)}
+				<h3 className='special-name'>{title}</h3>
 			</div>
 		</div>
 	);
