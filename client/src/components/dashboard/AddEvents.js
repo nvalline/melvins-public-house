@@ -5,13 +5,19 @@ import AddEventForm from '../forms/AddEventForm';
 import EventListTile from '../dashboard/EventListTile';
 import Button from '../forms/formItems/Button';
 import Loading from '../loading/Loading';
+import EditEventForm from '../forms/EditEventForm';
 // utils
 import { useGlobalContext } from '../../utils/AppContext';
 // seedData
 // import { eventData } from '../../seedData';
 
 const AddEvents = () => {
-	const { isLoadingEvents, eventData } = useGlobalContext();
+	const {
+		isLoadingEvents,
+		eventData,
+		showEditEvents,
+		handleEditEventModal
+	} = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -19,6 +25,7 @@ const AddEvents = () => {
 	};
 
 	const handleEdit = (id) => {
+		handleEditEventModal();
 		console.log(`Edit Btn Clicked, id: ${id}`);
 	};
 
@@ -63,6 +70,7 @@ const AddEvents = () => {
 	return (
 		<div className='add-block'>
 			<AddEventForm />
+			{showEditEvents && <EditEventForm />}
 			<div className='list-block'>
 				{eventData.map((item) => {
 					return (

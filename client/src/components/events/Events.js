@@ -7,7 +7,7 @@ import Loading from '../loading/Loading';
 import { useGlobalContext } from '../../utils/AppContext';
 
 const Events = () => {
-	const { isLoadingEvents, eventData } = useGlobalContext();
+	const { isLoadingEvents, eventData, todayDate } = useGlobalContext();
 
 	if (isLoadingEvents) {
 		return (

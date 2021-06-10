@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useReducer } from 'react';
 import reducer from './Reducer';
 import { Api } from '../utils/Api';
 
+const todayDate = new Date().getTime();
+
 const AppContext = React.createContext();
 
 const initialState = {
@@ -40,7 +42,8 @@ const initialState = {
 	// isHover: false,
 	users: true,
 	eventData: [],
-	specialData: []
+	specialData: [],
+	showEditEvents: false
 };
 
 const AppProvider = ({ children }) => {
@@ -78,6 +81,10 @@ const AppProvider = ({ children }) => {
 		});
 	};
 
+	const handleEditEventModal = () => {
+		dispatch({ type: 'TOGGLE_EDIT_EVENT_MODAL' });
+	};
+
 	const clearEventForm = () => {
 		dispatch({ type: 'CLEAR_EVENT_FORM' });
 	};
@@ -90,7 +97,18 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'LOADING_EVENTS' });
 		Api.getEvents().then((res) => {
 			console.log('EVENT DATA', res.data);
-			dispatch({ type: 'SET_EVENTS_DATA', payload: res.data });
+			const allEvents = res.data;
+			let currentEvents = [];
+
+			for (let i = 0; i < allEvents.length; i++) {
+				const eventEndDate = Date.parse(allEvents[i].endDate);
+
+				if (eventEndDate > todayDate) {
+					currentEvents.push(allEvents[i]);
+				}
+			}
+
+			dispatch({ type: 'SET_EVENTS_DATA', payload: currentEvents });
 		});
 	};
 
@@ -98,7 +116,18 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'LOADING_SPECIALS' });
 		Api.getSpecials().then((res) => {
 			console.log('SPECIALS DATA', res.data);
-			dispatch({ type: 'SET_SPECIALS_DATA', payload: res.data });
+			const allSpecials = res.data;
+			let currentSpecials = [];
+
+			for (let i = 0; i < allSpecials.length; i++) {
+				const specialEndDate = Date.parse(allSpecials[i].endDate);
+
+				if (specialEndDate > todayDate) {
+					currentSpecials.push(allSpecials[i]);
+				}
+			}
+
+			dispatch({ type: 'SET_SPECIALS_DATA', payload: currentSpecials });
 		});
 	};
 
@@ -116,6 +145,7 @@ const AppProvider = ({ children }) => {
 				handlePageChange,
 				showAlert,
 				handleEventState,
+				handleEditEventModal,
 				clearEventForm,
 				handleSpecialState,
 				clearSpecialForm,

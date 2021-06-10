@@ -2,7 +2,7 @@
 import React from 'react';
 
 const EventListTile = ({
-	id,
+	_id,
 	title,
 	startDate,
 	endDate,
@@ -26,10 +26,10 @@ const EventListTile = ({
 				{awayTeam && <p>{`Away: ${awayTeam}`}</p>}
 			</div>
 			<div className='tile-icons'>
-				<i className='far fa-edit icon' onClick={() => handleEdit(id)}></i>
+				<i className='far fa-edit icon' onClick={() => handleEdit(_id)}></i>
 				<i
 					className='far fa-trash-alt icon'
-					onClick={() => handleDelete(id)}
+					onClick={() => handleDelete(_id)}
 				></i>
 			</div>
 		</div>

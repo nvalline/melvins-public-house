@@ -78,6 +78,14 @@ const reducer = (state, action) => {
 		return { ...state, specialData: action.payload, isLoadingSpecials: false };
 	}
 
+	if (action.type === 'TOGGLE_EDIT_EVENT_MODAL') {
+		if (state.showEditEvents === true) {
+			return { ...state, showEditEvents: false };
+		} else {
+			return { ...state, showEditEvents: true };
+		}
+	}
+
 	throw new Error('no matching action type');
 };
 
