@@ -10,7 +10,11 @@ export const Api = {
 	saveEvent: function (eventData) {
 		return axios.post('/api/events', eventData);
 	},
+
 	// Update event in DB with given id
+	updateEvent: function (id) {
+		return axios.get(`/api/events/${id}`);
+	},
 	// Delete event in DB with given id
 
 	// GET all specials
@@ -22,6 +26,7 @@ export const Api = {
 	saveSpecial: function (specialData) {
 		return axios.post('/api/specials', specialData);
 	}
+
 	// Update special in DB with given id
 	// Delete special in DB with given id
 };

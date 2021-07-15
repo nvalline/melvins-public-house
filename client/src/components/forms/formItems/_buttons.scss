@@ -71,6 +71,21 @@
 	padding: 1.2rem 3rem;
 }
 
+// CANCEL BUTTON
+.cancel-btn {
+	background-color: $primary_yellow;
+	border: 1px solid $primary_yellow;
+	border-radius: 5px;
+	color: $primary_white;
+	cursor: pointer;
+	font-family: $secondary_font;
+	font-size: 1.4rem;
+	font-weight: 400;
+	margin-top: 1.5rem;
+	padding: 0.6rem;
+	width: 8rem;
+}
+
 // HOVER STYLES
 .subscribe-btn:hover,
 .login-btn:hover,
@@ -80,7 +95,8 @@
 }
 
 .order-btn:hover,
-.load-more-btn:hover {
+.load-more-btn:hover,
+.cancel-btn:hover {
 	background-color: $primary_yellow;
 	color: $primary_black;
 }

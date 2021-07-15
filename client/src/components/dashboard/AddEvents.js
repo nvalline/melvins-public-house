@@ -16,7 +16,8 @@ const AddEvents = () => {
 		isLoadingEvents,
 		eventData,
 		showEditEvents,
-		handleEditEventModal
+		handleEditEventModal,
+		fetchEventById
 	} = useGlobalContext();
 
 	const handleClick = (e) => {
@@ -25,7 +26,10 @@ const AddEvents = () => {
 	};
 
 	const handleEdit = (id) => {
-		handleEditEventModal();
+		if (!showEditEvents) {
+			handleEditEventModal();
+			fetchEventById(id);
+		}
 		console.log(`Edit Btn Clicked, id: ${id}`);
 	};
 

@@ -12,15 +12,15 @@ const EditEvent = () => {
 	const {
 		alert,
 		showAlert,
-		eventState,
+		editEventState,
 		handleEventState,
-		handleEditEventModal,
-		clearEventForm,
-		fetchEventData
+		handleEditEventModal
 	} = useGlobalContext();
 
 	const handleClick = (e) => {
 		e.preventDefault();
+
+		// ! UPDATE DB WITH EDITS
 
 		// if (!eventState.title && !eventState.startDate && !eventState.endDate) {
 		// 	showAlert(true, 'Title & Dates required', 'danger');
@@ -58,6 +58,10 @@ const EditEvent = () => {
 		handleEditEventModal();
 	};
 
+	const handleCancel = () => {
+		handleEditEventModal();
+	};
+
 	return (
 		<div className='form-container edit-form'>
 			<h2 className='form-header'>Edit Event</h2>
@@ -67,7 +71,7 @@ const EditEvent = () => {
 				<TextInput
 					type='text'
 					name='title'
-					value={eventState.title}
+					value={editEventState.title}
 					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
@@ -76,7 +80,7 @@ const EditEvent = () => {
 				<TextInput
 					type='datetime-local'
 					name='startDate'
-					value={eventState.startDate}
+					value={editEventState.startDate}
 					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
@@ -85,7 +89,7 @@ const EditEvent = () => {
 				<TextInput
 					type='datetime-local'
 					name='endDate'
-					value={eventState.endDate}
+					value={editEventState.endDate}
 					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
@@ -94,7 +98,7 @@ const EditEvent = () => {
 				<TextInput
 					type='text'
 					name='location'
-					value={eventState.location}
+					value={editEventState.location}
 					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
@@ -116,15 +120,15 @@ const EditEvent = () => {
 						{ value: 'music', label: 'Music' },
 						{ value: 'other', label: 'Other' }
 					]}
-					value={eventState.eventType}
+					value={editEventState.eventType}
 					onChange={(e) => handleEventState(e)}
 				/>
 				{/* display 'other' input field */}
-				{eventState.eventType === 'other' && (
+				{editEventState.eventType === 'other' && (
 					<TextInput
 						type='text'
 						name='otherType'
-						value={eventState.otherType}
+						value={editEventState.otherType}
 						onChange={(e) => handleEventState(e)}
 						className='input input-other'
 						placeholder='Enter Type'
@@ -134,7 +138,7 @@ const EditEvent = () => {
 				<TextInput
 					type='text'
 					name='homeTeam'
-					value={eventState.homeTeam}
+					value={editEventState.homeTeam}
 					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
@@ -143,7 +147,7 @@ const EditEvent = () => {
 				<TextInput
 					type='text'
 					name='awayTeam'
-					value={eventState.awayTeam}
+					value={editEventState.awayTeam}
 					onChange={(e) => handleEventState(e)}
 					className='input'
 					placeholder=''
@@ -153,6 +157,12 @@ const EditEvent = () => {
 					className='submit-btn'
 					onClick={handleClick}
 					text='Submit'
+				/>
+				<Button
+					type='button'
+					className='cancel-btn'
+					onClick={handleCancel}
+					text='Cancel'
 				/>
 			</form>
 		</div>

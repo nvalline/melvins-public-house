@@ -31,6 +31,17 @@ const initialState = {
 		homeTeam: '',
 		awayTeam: ''
 	},
+	editEventState: {
+		id: '',
+		title: '',
+		startDate: '',
+		endDate: '',
+		location: '',
+		eventType: 'football',
+		otherType: '',
+		homeTeam: '',
+		awayTeam: ''
+	},
 	specialState: {
 		id: '',
 		title: '',
@@ -96,7 +107,6 @@ const AppProvider = ({ children }) => {
 	const fetchEventData = () => {
 		dispatch({ type: 'LOADING_EVENTS' });
 		Api.getEvents().then((res) => {
-			console.log('EVENT DATA', res.data);
 			const allEvents = res.data;
 			let currentEvents = [];
 
@@ -112,10 +122,34 @@ const AppProvider = ({ children }) => {
 		});
 	};
 
+	const fetchEventById = (id) => {
+		Api.updateEvent(id).then((res) => {
+			console.log('EVENT DATA ID:', res.data);
+			const eventData = res.data;
+
+			if (eventData.startDate.length > 16) {
+				const diff = eventData.startDate.length - 16;
+				eventData.startDate = eventData.startDate.substring(
+					0,
+					eventData.startDate.length - diff
+				);
+			}
+
+			if (eventData.endDate.length > 16) {
+				const diff = eventData.endDate.length - 16;
+				eventData.endDate = eventData.endDate.substring(
+					0,
+					eventData.endDate.length - diff
+				);
+			}
+
+			dispatch({ type: 'SET_EDIT_EVENT_STATE', payload: eventData });
+		});
+	};
+
 	const fetchSpecialData = () => {
 		dispatch({ type: 'LOADING_SPECIALS' });
 		Api.getSpecials().then((res) => {
-			console.log('SPECIALS DATA', res.data);
 			const allSpecials = res.data;
 			let currentSpecials = [];
 
@@ -150,6 +184,7 @@ const AppProvider = ({ children }) => {
 				handleSpecialState,
 				clearSpecialForm,
 				fetchEventData,
+				fetchEventById,
 				fetchSpecialData
 			}}
 		>

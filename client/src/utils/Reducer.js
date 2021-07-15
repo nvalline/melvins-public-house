@@ -80,10 +80,28 @@ const reducer = (state, action) => {
 
 	if (action.type === 'TOGGLE_EDIT_EVENT_MODAL') {
 		if (state.showEditEvents === true) {
-			return { ...state, showEditEvents: false };
+			return {
+				...state,
+				showEditEvents: false,
+				editEventState: {
+					id: '',
+					title: '',
+					startDate: '',
+					endDate: '',
+					location: '',
+					eventType: 'football',
+					otherType: '',
+					homeTeam: '',
+					awayTeam: ''
+				}
+			};
 		} else {
 			return { ...state, showEditEvents: true };
 		}
+	}
+
+	if (action.type === 'SET_EDIT_EVENT_STATE') {
+		return { ...state, editEventState: action.payload };
 	}
 
 	throw new Error('no matching action type');
